@@ -263,11 +263,11 @@ const RECOMMENDATIONS_DATA: College[] = [
 
 export default function Recommendations() {
   return (
-    <div className="flex flex-col min-h-screen bg-bg-page font-body">
+    <div className="flex flex-col min-h-screen lg:min-h-[1110px] max-w-[1440px] mx-auto bg-bg-page font-body shadow-sm">
       {/* ==========================================================================
          1. DESKTOP HEADER (Top bar double-decker navbar)
          ========================================================================== */}
-      <div className="hidden lg:flex justify-between items-center py-2 px-[10%] bg-white border-b border-border text-[13px] text-text-body">
+      <div className="hidden lg:flex justify-between items-center py-2 px-8 xl:px-12 bg-white border-b border-border text-[13px] text-text-body">
         <div className="flex gap-5">
           <div className="flex items-center gap-1.5">
             <span className="text-accent-orange"><PhoneIcon /></span>
@@ -289,7 +289,7 @@ export default function Recommendations() {
         </div>
       </div>
 
-      <header className="hidden lg:flex justify-between items-center py-3.5 px-[10%] bg-white sticky top-0 z-50 border-b border-border shadow-[0_2px_10px_rgba(0,0,0,0.01)]">
+      <header className="hidden lg:flex justify-between items-center py-3.5 px-8 xl:px-12 bg-white sticky top-0 z-50 border-b border-border shadow-[0_2px_10px_rgba(0,0,0,0.01)]">
         <div className="flex items-center gap-2 font-bold text-2xl text-text-dark font-title">
           <BrandLogo />
         </div>
@@ -350,9 +350,9 @@ export default function Recommendations() {
       {/* ==========================================================================
          3. MAIN LAYOUT GRID (Sidebar + Main panel)
          ========================================================================== */}
-      <main className="flex flex-col lg:flex-row flex-1 py-10 px-4 lg:px-[10%] gap-8 max-w-[1440px] mx-auto w-full">
+      <main className="flex flex-col lg:flex-row flex-1 py-10 px-4 lg:px-8 xl:px-12 gap-8 w-full">
         {/* Left Sidebar (Desktop Only) */}
-        <aside className="hidden lg:flex flex-col w-[260px] bg-white border border-border rounded-xl p-6 h-fit shadow-premium">
+        <aside className="hidden lg:flex flex-col w-[220px] bg-white border border-border rounded-xl p-4 h-fit shadow-premium flex-shrink-0">
           <nav className="flex flex-col gap-2">
             <Link href="/" className="flex items-center gap-3 py-3 px-4 rounded-lg text-text-body font-medium text-[15px] cursor-pointer transition-all hover:bg-slate-50 hover:text-text-dark group">
               <div className="flex items-center justify-center text-lg text-text-light group-hover:text-text-dark transition-colors">
