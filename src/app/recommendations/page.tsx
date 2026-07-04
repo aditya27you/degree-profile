@@ -1,9 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { useState } from "react";
 import Link from "next/link";
-import Popup from "./Popup";
 
 // --- Inline SVG Icons for Visual Elegance and Zero External Dependencies ---
 
@@ -83,10 +79,10 @@ const HamburgerIcon = () => (
   </svg>
 );
 
-const EditIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 20h9" />
-    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+const PinIcon = () => (
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+    <circle cx="12" cy="10" r="3" />
   </svg>
 );
 
@@ -162,20 +158,115 @@ const BrandLogo = () => (
   </div>
 );
 
-export default function Home() {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [profile, setProfile] = useState({
-    id: "user-123",
-    fullName: "Kartikay Sharma",
-    parentPhone: "9306508269",
-    secondaryEmail: "ani141sh@gmail.com",
-    currentState: "Haryana",
-    currentCity: "Jind",
-    whatsapp: "---",
-  });
+// --- University SVG Logos (Crests) for Zero Dependency Premium Graphics ---
 
+const AlagappaLogo = () => (
+  <div className="w-14 h-14 relative overflow-hidden rounded-md border border-slate-100 flex items-center justify-center bg-white">
+    <Image 
+      src="/alagappa_logo.png" 
+      alt="Alagappa University Logo" 
+      fill
+      style={{ objectFit: "contain" }}
+    />
+  </div>
+);
+
+const AmityLogo = () => (
+  <div className="w-14 h-14 relative overflow-hidden rounded-md border border-slate-100 flex items-center justify-center bg-white">
+    <Image 
+      src="/amity_logo.jpg" 
+      alt="Amity University Online Logo" 
+      fill
+      style={{ objectFit: "contain" }}
+    />
+  </div>
+);
+
+const GlaLogo = () => (
+  <div className="w-14 h-14 relative overflow-hidden rounded-md border border-slate-100 flex items-center justify-center bg-white">
+    <Image 
+      src="/gla_logo.jpg" 
+      alt="GLA University Online Logo" 
+      fill
+      style={{ objectFit: "contain" }}
+    />
+  </div>
+);
+
+const LpuLogo = () => (
+  <div className="w-14 h-14 relative overflow-hidden rounded-md border border-slate-100 flex items-center justify-center bg-white">
+    <Image 
+      src="/lpu_logo.png" 
+      alt="LPU Online Logo" 
+      fill
+      style={{ objectFit: "contain" }}
+    />
+  </div>
+);
+
+const ShardaLogo = () => (
+  <div className="w-14 h-14 relative overflow-hidden rounded-md border border-slate-100 flex items-center justify-center bg-white">
+    <Image 
+      src="/sharda_logo.png" 
+      alt="Sharda University Online Logo" 
+      fill
+      style={{ objectFit: "contain" }}
+    />
+  </div>
+);
+
+interface College {
+  id: string;
+  name: string;
+  nirfRank: string;
+  location: string;
+  logoComponent: React.ComponentType;
+}
+
+const RECOMMENDATIONS_DATA: College[] = [
+  {
+    id: "college-1",
+    name: "Alagappa University",
+    nirfRank: "#134 NIRF Rank",
+    location: "Hyderabad",
+    logoComponent: AlagappaLogo,
+  },
+  {
+    id: "college-2",
+    name: "Amity University Online",
+    nirfRank: "#4 NIRF Rank",
+    location: "Noida, Uttar Prade...",
+    logoComponent: AmityLogo,
+  },
+  {
+    id: "college-3",
+    name: "GLA University Online",
+    nirfRank: "#13 NIRF Rank",
+    location: "Mathura, Uttar Pra...",
+    logoComponent: GlaLogo,
+  },
+  {
+    id: "college-4",
+    name: "LPU Online",
+    nirfRank: "#1 NIRF Rank",
+    location: "Phagwada, Punjab",
+    logoComponent: LpuLogo,
+  },
+  {
+    id: "college-5",
+    name: "Sharda University Online",
+    nirfRank: "#21 NIRF Rank",
+    location: "Greater Noida, Utt...",
+    logoComponent: ShardaLogo,
+  },
+];
+
+export default function Recommendations() {
   return (
     <div className="flex flex-col min-h-screen bg-bg-page font-body">
+      {/* ==========================================================================
+         1. DESKTOP HEADER (Top bar double-decker navbar)
+         ========================================================================== */}
       <div className="hidden lg:flex justify-between items-center py-2 px-[10%] bg-white border-b border-border text-[13px] text-text-body">
         <div className="flex gap-5">
           <div className="flex items-center gap-1.5">
@@ -227,12 +318,14 @@ export default function Home() {
           </button>
           <button className="flex items-center gap-2 bg-[#f3f6f9] border border-border py-2 px-4 rounded-lg text-text-dark font-medium text-sm transition-all hover:bg-[#e2e8f0]">
             <UserIcon />
-            <span>{profile.fullName ? profile.fullName.split(" ")[0] : ""}</span>
+            <span>Kartikay</span>
           </button>
         </div>
       </header>
 
-      {}
+      {/* ==========================================================================
+         2. MOBILE HEADER & NAVIGATION
+         ========================================================================== */}
       <div className="flex lg:hidden justify-between items-center p-3.5 bg-white border-b border-border sticky top-0 z-50">
         <button className="flex items-center justify-center w-9 h-9 rounded-md border border-border text-text-dark text-lg">
           <HamburgerIcon />
@@ -253,18 +346,22 @@ export default function Home() {
         <ChevronLeftIcon />
         <span>Back</span>
       </div>
+
+      {/* ==========================================================================
+         3. MAIN LAYOUT GRID (Sidebar + Main panel)
+         ========================================================================== */}
       <main className="flex flex-col lg:flex-row flex-1 py-10 px-4 lg:px-[10%] gap-8 max-w-[1440px] mx-auto w-full">
         {/* Left Sidebar (Desktop Only) */}
         <aside className="hidden lg:flex flex-col w-[260px] bg-white border border-border rounded-xl p-6 h-fit shadow-premium">
           <nav className="flex flex-col gap-2">
-            <Link href="/" className="flex items-center gap-3 py-3 px-4 rounded-lg text-primary bg-primary-light font-medium text-[15px] cursor-pointer transition-all">
-              <div className="flex items-center justify-center text-lg text-primary">
+            <Link href="/" className="flex items-center gap-3 py-3 px-4 rounded-lg text-text-body font-medium text-[15px] cursor-pointer transition-all hover:bg-slate-50 hover:text-text-dark group">
+              <div className="flex items-center justify-center text-lg text-text-light group-hover:text-text-dark transition-colors">
                 <ProfileDetailsIcon />
               </div>
               <span>Profile details</span>
             </Link>
-            <Link href="/recommendations" className="flex items-center gap-3 py-3 px-4 rounded-lg text-text-body font-medium text-[15px] cursor-pointer transition-all hover:bg-slate-50 hover:text-text-dark group">
-              <div className="flex items-center justify-center text-lg text-text-light group-hover:text-text-dark transition-colors">
+            <Link href="/recommendations" className="flex items-center gap-3 py-3 px-4 rounded-lg text-primary bg-primary-light font-medium text-[15px] cursor-pointer transition-all">
+              <div className="flex items-center justify-center text-lg text-primary">
                 <RecommendationsIcon />
               </div>
               <span>Recommendations</span>
@@ -303,172 +400,72 @@ export default function Home() {
           </div>
         </aside>
 
-        {/* Right Content Panels */}
+        {/* Right Content Panel - Recommended Colleges */}
         <section className="flex-1 flex flex-col gap-6">
-          <h1 className="block lg:hidden text-2xl font-bold text-text-dark font-title mb-1 mt-2.5">Profile Details</h1>
+          <h1 className="text-2xl font-bold text-text-dark font-title mb-2 mt-2">Recommended colleges</h1>
 
-          {/* Profile card with circle progress */}
-          <div className="bg-white border border-border rounded-xl p-5 lg:p-6 flex items-center justify-between shadow-premium">
-            <div className="flex items-center gap-5">
-              <div className="relative w-[72px] h-[72px] lg:w-[84px] lg:h-[84px]">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-white text-[11px] font-bold py-0.5 px-1.5 rounded-full z-10 shadow-[0_2px_5px_rgba(16,185,129,0.3)]">65%</div>
-                {/* SVG Progress Circle Border */}
-                <svg width="100%" height="100%" viewBox="0 0 100 100" style={{ transform: "rotate(-90deg)", position: "absolute", top: 0, left: 0 }}>
-                  <circle cx="50" cy="50" r="44" stroke="#e8eef6" strokeWidth="4" fill="transparent" />
-                  <circle cx="50" cy="50" r="44" stroke="#10b981" strokeWidth="4" fill="transparent" strokeDasharray="276.4" strokeDashoffset="96.7" strokeLinecap="round" />
-                </svg>
-                <div className="w-full h-full rounded-full overflow-hidden bg-slate-100 border-[3px] border-transparent flex items-center justify-center">
-                  {/* Shows placeholder of first initial */}
-                  <div className="w-full h-full flex items-center justify-center bg-slate-300 text-white font-semibold text-2xl lg:text-[32px] font-title">{profile.fullName ? profile.fullName.charAt(0).toUpperCase() : ""}</div>
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {RECOMMENDATIONS_DATA.map((college) => {
+              const Logo = college.logoComponent;
+              return (
+                <div 
+                  key={college.id} 
+                  className="bg-[#FFF] border border-[#CFD8DE] rounded-[8px] p-4 w-full sm:w-[327px] h-[187px] hover:border-slate-400 transition-all flex flex-col items-start justify-between gap-3"
+                >
+                  <div className="w-full">
+                    {/* Top Row: Logo & Rank Badge / Location */}
+                    <div className="flex items-start justify-between w-full">
+                      <div className="w-14 h-14 flex-shrink-0">
+                        <Logo />
+                      </div>
+                      <div className="flex flex-col items-end gap-1.5">
+                        {/* Rank Badge */}
+                        <span className="bg-[#e6fcf5] text-green-600 text-[11px] font-bold py-1 px-2.5 rounded-full border border-green-100">
+                          {college.nirfRank}
+                        </span>
+                        {/* Location */}
+                        <div className="flex items-center gap-1 text-[13px] text-text-light">
+                          <span className="text-slate-400"><PinIcon /></span>
+                          <span className="truncate max-w-[130px]">{college.location}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* College Name */}
+                    <h3 className="text-[15px] font-bold text-text-dark font-title leading-snug line-clamp-1 mt-3">
+                      {college.name}
+                    </h3>
+                  </div>
+
+                  {/* Input Search Degree */}
+                  <div className="w-full relative">
+                    <input 
+                      type="text" 
+                      placeholder="Search degree"
+                      className="w-full border border-[#cbd5e1] rounded-lg py-1.5 px-3.5 text-sm text-text-dark focus:outline-none focus:border-primary placeholder-slate-400 transition-colors"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="flex flex-col gap-1">
-                <h2 className="text-lg lg:text-xl font-bold text-text-dark font-title">{profile.fullName}</h2>
-                <p className="text-sm text-text-light">{profile.secondaryEmail}</p>
-              </div>
-            </div>
-            <button className="hidden lg:block border border-primary text-primary font-semibold text-sm py-2.5 px-5 rounded-lg bg-transparent transition-all hover:bg-primary hover:text-white hover:shadow-[0_4px_12px_rgba(11,58,96,0.15)]">
-              Complete profile
+              );
+            })}
+          </div>
+
+          {/* Explore all colleges button */}
+          <div className="flex justify-center pt-6">
+            <button className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-2.5 px-8 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+              Explore all colleges
             </button>
           </div>
-
-          {/* Card 1: General Details */}
-          <div className="bg-white border border-border rounded-xl p-5 lg:p-7 shadow-premium transition-all hover:border-slate-300 hover:shadow-premiumHover">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="text-lg font-bold text-text-dark font-title">General Details</h3>
-              <button 
-                onClick={() => setIsPopupOpen(true)}
-                className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-text-dark bg-transparent transition-all hover:border-primary hover:bg-primary-light hover:text-primary hover:rotate-12"
-              >
-                <EditIcon />
-              </button>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-5 gap-x-6">
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Full Name</span>
-                <span className="text-sm font-semibold text-text-dark break-words">{profile.fullName}</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Parent's Phone</span>
-                <span className="text-sm font-semibold text-text-dark break-words">{profile.parentPhone}</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Secondary Email</span>
-                <span className="text-sm font-semibold text-text-dark break-words">{profile.secondaryEmail}</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Current State</span>
-                <span className="text-sm font-semibold text-text-dark break-words">{profile.currentState}</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Current City</span>
-                <span className="text-sm font-semibold text-text-dark break-words">{profile.currentCity}</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">WhatsApp</span>
-                <span className="text-sm font-semibold text-text-dark break-words">{profile.whatsapp}</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 2: Your Preference Detail */}
-          <div className="bg-white border border-border rounded-xl p-5 lg:p-7 shadow-premium transition-all hover:border-slate-300 hover:shadow-premiumHover">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="text-lg font-bold text-text-dark font-title">Your Preference Detail</h3>
-              <button className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-text-dark bg-transparent transition-all hover:border-primary hover:bg-primary-light hover:text-primary hover:rotate-12">
-                <EditIcon />
-              </button>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-5 gap-x-6">
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Stream</span>
-                <span className="text-sm font-semibold text-text-dark break-words">Management, Agriculture, +2</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Level</span>
-                <span className="text-sm font-semibold text-text-dark break-words">Diploma</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Degree</span>
-                <span className="text-sm font-semibold text-text-dark break-words">Online B.com</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Specialization</span>
-                <span className="text-sm font-semibold text-text-dark break-words">ACCA</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Study Mode</span>
-                <span className="text-sm font-semibold text-text-dark break-words">Online</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Preferred Budget</span>
-                <span className="text-sm font-semibold text-text-dark break-words">1,50,000</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Preferred State</span>
-                <span className="text-sm font-semibold text-text-dark break-words">Punjab</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Preferred City</span>
-                <span className="text-sm font-semibold text-text-dark break-words">Ludhiana</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 3: Additional Details */}
-          <div className="bg-white border border-border rounded-xl p-5 lg:p-7 shadow-premium transition-all hover:border-slate-300 hover:shadow-premiumHover">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="text-lg font-bold text-text-dark font-title">Additional Details</h3>
-              <button className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-text-dark bg-transparent transition-all hover:border-primary hover:bg-primary-light hover:text-primary hover:rotate-12">
-                <EditIcon />
-              </button>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-5 gap-x-6">
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Highest qualification</span>
-                <span className="text-sm font-semibold text-text-dark break-words">12th</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Motive</span>
-                <span className="text-sm font-semibold text-text-dark break-words">Salary Hike</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Current Profession</span>
-                <span className="text-sm font-semibold text-text-dark break-words">Student</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Desired time to start Course</span>
-                <span className="text-sm font-semibold text-text-dark break-words">June 2026</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Last CGPA/Percentage</span>
-                <span className="text-sm font-semibold text-text-dark break-words">92%</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Academic gap (if any)</span>
-                <span className="text-sm font-semibold text-text-dark break-words">No</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Lorem ipsum</span>
-                <span className="text-sm font-semibold text-text-dark break-words">Lorem</span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-medium text-text-light">Lorem ipsum</span>
-                <span className="text-sm font-semibold text-text-dark break-words">Lorem</span>
-              </div>
-            </div>
-          </div>
         </section>
-      </main>  
+      </main>
+
+      {/* ==========================================================================
+         4. FOOTER
+         ========================================================================== */}
       <footer className="bg-primary text-white text-center py-4 px-5 text-[13px] font-normal border-t border-primary-dark mt-auto">
         <p>© 2026 Nuvora Education Private Limited. All rights reserved.</p>
       </footer>
-      <Popup 
-        isOpen={isPopupOpen}
-        onClose={() => setIsPopupOpen(false)}
-        profile={profile}
-        onSubmit={(updatedData) => setProfile(p => ({ ...p, ...updatedData }))}
-      />
     </div>
   );
 }
