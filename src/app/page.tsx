@@ -160,9 +160,6 @@ const BrandLogo = () => (
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-bg-page font-body">
-      {/* ==========================================================================
-         1. DESKTOP HEADER (Top bar double-decker navbar)
-         ========================================================================== */}
       <div className="hidden lg:flex justify-between items-center py-2 px-[10%] bg-white border-b border-border text-[13px] text-text-body">
         <div className="flex gap-5">
           <div className="flex items-center gap-1.5">
@@ -219,9 +216,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* ==========================================================================
-         2. MOBILE HEADER & NAVIGATION
-         ========================================================================== */}
+      {}
       <div className="flex lg:hidden justify-between items-center p-3.5 bg-white border-b border-border sticky top-0 z-50">
         <button className="flex items-center justify-center w-9 h-9 rounded-md border border-border text-text-dark text-lg">
           <HamburgerIcon />
