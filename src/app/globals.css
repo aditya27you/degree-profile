@@ -1,34 +1,26 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Brand colors */
+  --color-primary: #0b3a60; /* Deep blue/navy */
+  --color-primary-dark: #07253f;
+  --color-primary-light: #f0f7ff;
+  --color-accent-orange: #f38612; /* Logo orange */
+  --color-text-dark: #1f2e4d; /* Navy text */
+  --color-text-body: #495874; /* Soft slate/blue gray */
+  --color-text-light: #7e8da8; /* Muted gray */
+  --color-bg-page: #f6f8fb; /* Off-white page bg */
+  --color-bg-card: #ffffff;
+  --color-border: #e8eef6;
+  --color-border-hover: #cbd5e1;
+  --color-green: #10b981;
+  --color-green-light: #e6fcf5;
+  --color-red: #ef4444;
+  --color-red-light: #fef2f2;
+  --color-shadow: rgba(31, 46, 77, 0.04);
+  --color-shadow-hover: rgba(31, 46, 77, 0.08);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Fonts */
+  --font-family-title: var(--font-outfit), "Outfit", "Inter", sans-serif;
+  --font-family-body: var(--font-inter), "Inter", Arial, sans-serif;
 }
 
 * {
@@ -37,13 +29,50 @@ body {
   margin: 0;
 }
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-bg-page);
+  color: var(--color-text-body);
+  font-family: var(--font-family-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+input, button, select, textarea {
+  font-family: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Micro-animations & hover transitions */
+.transition-all {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-page);
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
