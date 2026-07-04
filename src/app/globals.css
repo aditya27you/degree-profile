@@ -1,64 +1,19 @@
-:root {
-  /* Brand colors */
-  --color-primary: #0b3a60; /* Deep blue/navy */
-  --color-primary-dark: #07253f;
-  --color-primary-light: #f0f7ff;
-  --color-accent-orange: #f38612; /* Logo orange */
-  --color-text-dark: #1f2e4d; /* Navy text */
-  --color-text-body: #495874; /* Soft slate/blue gray */
-  --color-text-light: #7e8da8; /* Muted gray */
-  --color-bg-page: #f6f8fb; /* Off-white page bg */
-  --color-bg-card: #ffffff;
-  --color-border: #e8eef6;
-  --color-border-hover: #cbd5e1;
-  --color-green: #10b981;
-  --color-green-light: #e6fcf5;
-  --color-red: #ef4444;
-  --color-red-light: #fef2f2;
-  --color-shadow: rgba(31, 46, 77, 0.04);
-  --color-shadow-hover: rgba(31, 46, 77, 0.08);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  /* Fonts */
-  --font-family-title: var(--font-outfit), "Outfit", "Inter", sans-serif;
-  --font-family-body: var(--font-inter), "Inter", Arial, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
-body {
-  height: 100%;
-  width: 100%;
-  background-color: var(--color-bg-page);
-  color: var(--color-text-body);
-  font-family: var(--font-family-body);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-input, button, select, textarea {
-  font-family: inherit;
-}
-
-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* Micro-animations & hover transitions */
-.transition-all {
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+@layer base {
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    background-color: #f6f8fb; /* bg-bg-page */
+    color: #495874; /* text-text-body */
+    font-family: var(--font-inter), "Inter", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
 }
 
 /* Custom Scrollbar */
@@ -67,7 +22,7 @@ button {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-page);
+  background: #f6f8fb;
 }
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;

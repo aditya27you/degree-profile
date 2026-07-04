@@ -1,5 +1,4 @@
 import Image from "next/image";
-import styles from "./page.module.css";
 
 // --- Inline SVG Icons for Visual Elegance and Zero External Dependencies ---
 
@@ -146,7 +145,7 @@ const LogoutIcon = () => (
 // --- Brand Logo component for top bars ---
 
 const BrandLogo = () => (
-  <div className={styles.logoIcon}>
+  <div className="flex relative items-center justify-center">
     <Image 
       src="/logo.png" 
       alt="DegreeFYD Logo" 
@@ -160,60 +159,60 @@ const BrandLogo = () => (
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className="flex flex-col min-h-screen bg-bg-page font-body">
       {/* ==========================================================================
          1. DESKTOP HEADER (Top bar double-decker navbar)
          ========================================================================== */}
-      <div className={styles.topBar}>
-        <div className={styles.topBarLeft}>
-          <div className={styles.contactItem}>
-            <PhoneIcon />
+      <div className="hidden lg:flex justify-between items-center py-2 px-[10%] bg-white border-b border-border text-[13px] text-text-body">
+        <div className="flex gap-5">
+          <div className="flex items-center gap-1.5">
+            <span className="text-accent-orange"><PhoneIcon /></span>
             <span>9306508369</span>
           </div>
-          <div className={styles.contactItem}>
-            <MailIcon />
+          <div className="flex items-center gap-1.5">
+            <span className="text-accent-orange"><MailIcon /></span>
             <span>example@degreefyd.com</span>
           </div>
         </div>
-        <div className={styles.topBarRight}>
+        <div className="flex items-center gap-2">
           <span>Connect with us on your Favorite Socials -</span>
-          <div className={styles.socialIcons}>
-            <a href="#" className={styles.socialIcon}><InstagramIcon /></a>
-            <a href="#" className={styles.socialIcon}><FacebookIcon /></a>
-            <a href="#" className={styles.socialIcon}><YoutubeIcon /></a>
-            <a href="#" className={styles.socialIcon}><LinkedinIcon /></a>
+          <div className="flex gap-2 items-center">
+            <a href="#" className="flex items-center justify-center w-5 h-5 rounded-full text-primary text-[12px] transition-all hover:-translate-y-0.5 hover:opacity-80"><InstagramIcon /></a>
+            <a href="#" className="flex items-center justify-center w-5 h-5 rounded-full text-primary text-[12px] transition-all hover:-translate-y-0.5 hover:opacity-80"><FacebookIcon /></a>
+            <a href="#" className="flex items-center justify-center w-5 h-5 rounded-full text-primary text-[12px] transition-all hover:-translate-y-0.5 hover:opacity-80"><YoutubeIcon /></a>
+            <a href="#" className="flex items-center justify-center w-5 h-5 rounded-full text-primary text-[12px] transition-all hover:-translate-y-0.5 hover:opacity-80"><LinkedinIcon /></a>
           </div>
         </div>
       </div>
 
-      <header className={styles.header}>
-        <div className={styles.logoContainer}>
+      <header className="hidden lg:flex justify-between items-center py-3.5 px-[10%] bg-white sticky top-0 z-50 border-b border-border shadow-[0_2px_10px_rgba(0,0,0,0.01)]">
+        <div className="flex items-center gap-2 font-bold text-2xl text-text-dark font-title">
           <BrandLogo />
         </div>
-        <nav className={styles.nav}>
-          <div className={styles.navItem}>
+        <nav className="flex gap-7.5 gap-x-8">
+          <div className="flex items-center gap-1 font-medium text-text-dark text-[15px] cursor-pointer transition-colors hover:text-accent-orange group">
             <span>Universities</span>
-            <ChevronDownIcon />
+            <span className="text-text-light transition-transform group-hover:translate-y-0.5"><ChevronDownIcon /></span>
           </div>
-          <div className={styles.navItem}>
+          <div className="flex items-center gap-1 font-medium text-text-dark text-[15px] cursor-pointer transition-colors hover:text-accent-orange group">
             <span>Courses</span>
-            <ChevronDownIcon />
+            <span className="text-text-light transition-transform group-hover:translate-y-0.5"><ChevronDownIcon /></span>
           </div>
-          <div className={styles.navItem}>
+          <div className="flex items-center gap-1 font-medium text-text-dark text-[15px] cursor-pointer transition-colors hover:text-accent-orange group">
             <span>More</span>
-            <ChevronDownIcon />
+            <span className="text-text-light transition-transform group-hover:translate-y-0.5"><ChevronDownIcon /></span>
           </div>
         </nav>
-        <div className={styles.headerActions}>
-          <div className={styles.dropdownAction}>
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 font-medium text-text-dark text-[15px] cursor-pointer py-1.5 px-3 rounded-md transition-colors hover:bg-primary-light">
             <span>Regular</span>
             <ChevronDownIcon />
           </div>
-          <button className={styles.searchBtn}>
+          <button className="flex items-center gap-2 border border-[#c3d4e9] py-2 px-4 rounded-lg text-primary font-medium text-sm transition-all hover:bg-primary-light hover:border-primary">
             <SearchIcon />
             <span>Search</span>
           </button>
-          <button className={styles.userProfileBtn}>
+          <button className="flex items-center gap-2 bg-[#f3f6f9] border border-border py-2 px-4 rounded-lg text-text-dark font-medium text-sm transition-all hover:bg-[#e2e8f0]">
             <UserIcon />
             <span>Kartikay</span>
           </button>
@@ -223,74 +222,70 @@ export default function Home() {
       {/* ==========================================================================
          2. MOBILE HEADER & NAVIGATION
          ========================================================================== */}
-      <div className={styles.mobileHeader}>
-        <button className={styles.mobileHeaderIcon}>
+      <div className="flex lg:hidden justify-between items-center p-3.5 bg-white border-b border-border sticky top-0 z-50">
+        <button className="flex items-center justify-center w-9 h-9 rounded-md border border-border text-text-dark text-lg">
           <HamburgerIcon />
         </button>
-        <div className={styles.mobileLogo}>
+        <div className="flex items-center gap-1.5 font-bold text-xl text-text-dark font-title">
           <BrandLogo />
         </div>
-        <div className={styles.mobileHeaderActions}>
-          <button className={styles.mobileHeaderIcon}>
+        <div className="flex items-center gap-4">
+          <button className="flex items-center justify-center w-9 h-9 rounded-md border border-border text-text-dark text-lg">
             <SearchIcon />
           </button>
-          <button className={styles.mobileHeaderIcon}>
+          <button className="flex items-center justify-center w-9 h-9 rounded-md border border-border text-text-dark text-lg">
             <UserIcon />
           </button>
         </div>
       </div>
-      <div className={styles.mobileBackBar}>
+      <div className="flex lg:hidden items-center bg-primary py-3 px-5 text-white font-medium text-sm gap-2 cursor-pointer">
         <ChevronLeftIcon />
         <span>Back</span>
       </div>
-
-      {/* ==========================================================================
-         3. MAIN LAYOUT GRID (Sidebar + Main panel)
-         ========================================================================== */}
-      <main className={styles.mainWrapper}>
+      <main className="flex flex-col lg:flex-row flex-1 py-10 px-4 lg:px-[10%] gap-8 max-w-[1440px] mx-auto w-full">
         {/* Left Sidebar (Desktop Only) */}
-        <aside className={styles.sidebar}>
-          <nav className={styles.sidebarMenu}>
-            <div className={`${styles.sidebarItem} ${styles.sidebarItemActive}`}>
-              <div className={styles.sidebarItemIcon}>
+        <aside className="hidden lg:flex flex-col w-[260px] bg-white border border-border rounded-xl p-6 h-fit shadow-premium">
+          <nav className="flex flex-col gap-2">
+            <div className="flex items-center gap-3 py-3 px-4 rounded-lg text-primary bg-primary-light font-medium text-[15px] cursor-pointer transition-all">
+              <div className="flex items-center justify-center text-lg text-primary">
                 <ProfileDetailsIcon />
               </div>
               <span>Profile details</span>
             </div>
-            <div className={styles.sidebarItem}>
-              <div className={styles.sidebarItemIcon}>
+            <div className="flex items-center gap-3 py-3 px-4 rounded-lg text-text-body font-medium text-[15px] cursor-pointer transition-all hover:bg-slate-50 hover:text-text-dark group">
+              <div className="flex items-center justify-center text-lg text-text-light group-hover:text-text-dark transition-colors">
                 <RecommendationsIcon />
               </div>
               <span>Recommendations</span>
             </div>
-            <div className={styles.sidebarItem}>
-              <div className={styles.sidebarItemIcon}>
+            <div className="flex items-center gap-3 py-3 px-4 rounded-lg text-text-body font-medium text-[15px] cursor-pointer transition-all hover:bg-slate-50 hover:text-text-dark group">
+              <div className="flex items-center justify-center text-lg text-text-light group-hover:text-text-dark transition-colors">
                 <ShortlistsIcon />
               </div>
               <span>Shortlists</span>
             </div>
-            <div className={styles.sidebarItem}>
-              <div className={styles.sidebarItemIcon}>
+            <div className="flex items-center gap-3 py-3 px-4 rounded-lg text-text-body font-medium text-[15px] cursor-pointer transition-all hover:bg-slate-50 hover:text-text-dark group">
+              <div className="flex items-center justify-center text-lg text-text-light group-hover:text-text-dark transition-colors">
                 <CounselorIcon />
               </div>
               <span>Talk to counselor</span>
             </div>
-            <div className={styles.sidebarItem}>
-              <div className={styles.sidebarItemIcon}>
+            <div className="flex items-center gap-3 py-3 px-4 rounded-lg text-text-body font-medium text-[15px] cursor-pointer transition-all hover:bg-slate-50 hover:text-text-dark group">
+              <div className="flex items-center justify-center text-lg text-text-light group-hover:text-text-dark transition-colors">
                 <DocumentsIcon />
               </div>
               <span>My documents</span>
             </div>
-            <div className={styles.sidebarItem}>
-              <div className={styles.sidebarItemIcon}>
+            <div className="flex items-center gap-3 py-3 px-4 rounded-lg text-text-body font-medium text-[15px] cursor-pointer transition-all hover:bg-slate-50 hover:text-text-dark group">
+              <div className="flex items-center justify-center text-lg text-text-light group-hover:text-text-dark transition-colors">
                 <ReferEarnIcon />
               </div>
               <span>Refer & Earn</span>
             </div>
           </nav>
-          <div className={styles.sidebarDivider} />
-          <div className={styles.logoutItem}>
-            <div className={styles.sidebarItemIcon}>
+          <div className="h-px bg-border my-5" />
+          <div className="flex items-center gap-3 py-3 px-4 rounded-lg text-red-500 font-medium text-[15px] cursor-pointer transition-all hover:bg-red-50">
+            <div className="flex items-center justify-center text-lg text-red-500">
               <LogoutIcon />
             </div>
             <span>Log out</span>
@@ -298,164 +293,160 @@ export default function Home() {
         </aside>
 
         {/* Right Content Panels */}
-        <section className={styles.contentArea}>
-          <h1 className={styles.profileTitle}>Profile Details</h1>
+        <section className="flex-1 flex flex-col gap-6">
+          <h1 className="block lg:hidden text-2xl font-bold text-text-dark font-title mb-1 mt-2.5">Profile Details</h1>
 
           {/* Profile card with circle progress */}
-          <div className={styles.profileCard}>
-            <div className={styles.profileCardLeft}>
-              <div className={styles.avatarProgressWrapper}>
-                <div className={styles.progressLabel}>65%</div>
+          <div className="bg-white border border-border rounded-xl p-5 lg:p-6 flex items-center justify-between shadow-premium">
+            <div className="flex items-center gap-5">
+              <div className="relative w-[72px] h-[72px] lg:w-[84px] lg:h-[84px]">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-white text-[11px] font-bold py-0.5 px-1.5 rounded-full z-10 shadow-[0_2px_5px_rgba(16,185,129,0.3)]">65%</div>
                 {/* SVG Progress Circle Border */}
                 <svg width="100%" height="100%" viewBox="0 0 100 100" style={{ transform: "rotate(-90deg)", position: "absolute", top: 0, left: 0 }}>
                   <circle cx="50" cy="50" r="44" stroke="#e8eef6" strokeWidth="4" fill="transparent" />
-                  <circle cx="50" cy="50" r="44" stroke="var(--color-green)" strokeWidth="4" fill="transparent" strokeDasharray="276.4" strokeDashoffset="96.7" strokeLinecap="round" />
+                  <circle cx="50" cy="50" r="44" stroke="#10b981" strokeWidth="4" fill="transparent" strokeDasharray="276.4" strokeDashoffset="96.7" strokeLinecap="round" />
                 </svg>
-                <div className={styles.avatarCircle}>
-                  {/* Shows placeholder 'K' on desktop and mobile placeholder image */}
-                  <div className={styles.avatarPlaceholder}>K</div>
+                <div className="w-full h-full rounded-full overflow-hidden bg-slate-100 border-[3px] border-transparent flex items-center justify-center">
+                  {/* Shows placeholder 'K' */}
+                  <div className="w-full h-full flex items-center justify-center bg-slate-300 text-white font-semibold text-2xl lg:text-[32px] font-title">K</div>
                 </div>
               </div>
-              <div className={styles.profileInfo}>
-                <h2 className={styles.profileName}>Kartikay Sharma</h2>
-                <p className={styles.profileEmail}>example@gmail.com</p>
+              <div className="flex flex-col gap-1">
+                <h2 className="text-lg lg:text-xl font-bold text-text-dark font-title">Kartikay Sharma</h2>
+                <p className="text-sm text-text-light">example@gmail.com</p>
               </div>
             </div>
-            <button className={styles.completeProfileBtn}>
+            <button className="hidden lg:block border border-primary text-primary font-semibold text-sm py-2.5 px-5 rounded-lg bg-transparent transition-all hover:bg-primary hover:text-white hover:shadow-[0_4px_12px_rgba(11,58,96,0.15)]">
               Complete profile
             </button>
           </div>
 
           {/* Card 1: General Details */}
-          <div className={styles.sectionCard}>
-            <div className={styles.sectionHeader}>
-              <h3 className={styles.sectionTitle}>General Details</h3>
-              <button className={styles.editBtn}>
+          <div className="bg-white border border-border rounded-xl p-5 lg:p-7 shadow-premium transition-all hover:border-slate-300 hover:shadow-premiumHover">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-lg font-bold text-text-dark font-title">General Details</h3>
+              <button className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-text-dark bg-transparent transition-all hover:border-primary hover:bg-primary-light hover:text-primary hover:rotate-12">
                 <EditIcon />
               </button>
             </div>
-            <div className={styles.sectionGrid}>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Full Name</span>
-                <span className={styles.fieldValue}>Kartikay Sharma</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-5 gap-x-6">
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Full Name</span>
+                <span className="text-sm font-semibold text-text-dark break-words">Kartikay Sharma</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Parent's Phone</span>
-                <span className={styles.fieldValue}>9306508269</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Parent's Phone</span>
+                <span className="text-sm font-semibold text-text-dark break-words">9306508269</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Secondary Email</span>
-                <span className={styles.fieldValue}>ani141sh@gmail.com</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Secondary Email</span>
+                <span className="text-sm font-semibold text-text-dark break-words">ani141sh@gmail.com</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Current State</span>
-                <span className={styles.fieldValue}>Haryana</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Current State</span>
+                <span className="text-sm font-semibold text-text-dark break-words">Haryana</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Current City</span>
-                <span className={styles.fieldValue}>Jind</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Current City</span>
+                <span className="text-sm font-semibold text-text-dark break-words">Jind</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>WhatsApp</span>
-                <span className={styles.fieldValue}>---</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">WhatsApp</span>
+                <span className="text-sm font-semibold text-text-dark break-words">---</span>
               </div>
             </div>
           </div>
 
           {/* Card 2: Your Preference Detail */}
-          <div className={styles.sectionCard}>
-            <div className={styles.sectionHeader}>
-              <h3 className={styles.sectionTitle}>Your Preference Detail</h3>
-              <button className={styles.editBtn}>
+          <div className="bg-white border border-border rounded-xl p-5 lg:p-7 shadow-premium transition-all hover:border-slate-300 hover:shadow-premiumHover">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-lg font-bold text-text-dark font-title">Your Preference Detail</h3>
+              <button className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-text-dark bg-transparent transition-all hover:border-primary hover:bg-primary-light hover:text-primary hover:rotate-12">
                 <EditIcon />
               </button>
             </div>
-            <div className={styles.sectionGrid}>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Stream</span>
-                <span className={styles.fieldValue}>Management, Agriculture, +2</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-5 gap-x-6">
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Stream</span>
+                <span className="text-sm font-semibold text-text-dark break-words">Management, Agriculture, +2</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Level</span>
-                <span className={styles.fieldValue}>Diploma</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Level</span>
+                <span className="text-sm font-semibold text-text-dark break-words">Diploma</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Degree</span>
-                <span className={styles.fieldValue}>Online B.com</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Degree</span>
+                <span className="text-sm font-semibold text-text-dark break-words">Online B.com</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Specialization</span>
-                <span className={styles.fieldValue}>ACCA</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Specialization</span>
+                <span className="text-sm font-semibold text-text-dark break-words">ACCA</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Study Mode</span>
-                <span className={styles.fieldValue}>Online</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Study Mode</span>
+                <span className="text-sm font-semibold text-text-dark break-words">Online</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Preferred Budget</span>
-                <span className={styles.fieldValue}>1,50,000</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Preferred Budget</span>
+                <span className="text-sm font-semibold text-text-dark break-words">1,50,000</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Preferred State</span>
-                <span className={styles.fieldValue}>Punjab</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Preferred State</span>
+                <span className="text-sm font-semibold text-text-dark break-words">Punjab</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Preferred City</span>
-                <span className={styles.fieldValue}>Ludhiana</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Preferred City</span>
+                <span className="text-sm font-semibold text-text-dark break-words">Ludhiana</span>
               </div>
             </div>
           </div>
 
           {/* Card 3: Additional Details */}
-          <div className={styles.sectionCard}>
-            <div className={styles.sectionHeader}>
-              <h3 className={styles.sectionTitle}>Additional Details</h3>
-              <button className={styles.editBtn}>
+          <div className="bg-white border border-border rounded-xl p-5 lg:p-7 shadow-premium transition-all hover:border-slate-300 hover:shadow-premiumHover">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-lg font-bold text-text-dark font-title">Additional Details</h3>
+              <button className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-text-dark bg-transparent transition-all hover:border-primary hover:bg-primary-light hover:text-primary hover:rotate-12">
                 <EditIcon />
               </button>
             </div>
-            <div className={styles.sectionGrid}>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Highest qualification</span>
-                <span className={styles.fieldValue}>12th</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-5 gap-x-6">
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Highest qualification</span>
+                <span className="text-sm font-semibold text-text-dark break-words">12th</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Motive</span>
-                <span className={styles.fieldValue}>Salary Hike</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Motive</span>
+                <span className="text-sm font-semibold text-text-dark break-words">Salary Hike</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Current Profession</span>
-                <span className={styles.fieldValue}>Student</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Current Profession</span>
+                <span className="text-sm font-semibold text-text-dark break-words">Student</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Desired time to start Course</span>
-                <span className={styles.fieldValue}>June 2026</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Desired time to start Course</span>
+                <span className="text-sm font-semibold text-text-dark break-words">June 2026</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Last CGPA/Percentage</span>
-                <span className={styles.fieldValue}>92%</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Last CGPA/Percentage</span>
+                <span className="text-sm font-semibold text-text-dark break-words">92%</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Academic gap (if any)</span>
-                <span className={styles.fieldValue}>No</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Academic gap (if any)</span>
+                <span className="text-sm font-semibold text-text-dark break-words">No</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Lorem ipsum</span>
-                <span className={styles.fieldValue}>Lorem</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Lorem ipsum</span>
+                <span className="text-sm font-semibold text-text-dark break-words">Lorem</span>
               </div>
-              <div className={styles.gridField}>
-                <span className={styles.fieldLabel}>Lorem ipsum</span>
-                <span className={styles.fieldValue}>Lorem</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[13px] font-medium text-text-light">Lorem ipsum</span>
+                <span className="text-sm font-semibold text-text-dark break-words">Lorem</span>
               </div>
             </div>
           </div>
         </section>
-      </main>
-
-      {/* ==========================================================================
-         4. FOOTER
-         ========================================================================== */}
-      <footer className={styles.footer}>
+      </main>  
+      <footer className="bg-primary text-white text-center py-4 px-5 text-[13px] font-normal border-t border-primary-dark mt-auto">
         <p>© 2026 Nuvora Education Private Limited. All rights reserved.</p>
       </footer>
     </div>
