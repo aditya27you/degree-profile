@@ -1,6 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
+import BookSessionModal from "../components/BookSessionModal";
 import { StarIcon, VerifiedIcon } from "../components/Icons";
 
 interface Counselor {
@@ -96,6 +100,9 @@ const COUNSELORS_DATA: Counselor[] = [
 ];
 
 export default function TalkToCounselor() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCounselor, setSelectedCounselor] = useState<Counselor | null>(null);
+
   return (
     <div className="flex flex-col min-h-screen lg:min-h-[1110px] max-w-[1440px] mx-auto bg-bg-page font-body shadow-sm">
       <Header />
@@ -155,7 +162,13 @@ export default function TalkToCounselor() {
                 </div>
 
                 {/* Book Free Session Button */}
-                <button className="w-full bg-primary hover:bg-primary-dark text-white font-bold text-xs py-2.5 px-2 rounded-lg transition-colors mt-auto">
+                <button 
+                  onClick={() => {
+                    setSelectedCounselor(counselor);
+                    setIsModalOpen(true);
+                  }}
+                  className="w-full bg-primary hover:bg-primary-dark text-white font-bold text-xs py-2.5 px-2 rounded-lg transition-colors mt-auto"
+                >
                   Book Free Session
                 </button>
               </div>
@@ -165,6 +178,11 @@ export default function TalkToCounselor() {
       </main>
 
       <Footer />
+      <BookSessionModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        counselor={selectedCounselor}
+      />
     </div>
   );
 }
