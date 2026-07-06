@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import BookSessionModal from "../components/BookSessionModal";
+import SuccessPopup from "../components/SuccessPopup";
 import { StarIcon, VerifiedIcon } from "../components/Icons";
 
 interface Counselor {
@@ -102,6 +103,8 @@ const COUNSELORS_DATA: Counselor[] = [
 export default function TalkToCounselor() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCounselor, setSelectedCounselor] = useState<Counselor | null>(null);
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false);
+  const [successDetails, setSuccessDetails] = useState({ title: "", description: "" });
 
   return (
     <div className="flex flex-col min-h-screen lg:min-h-[1110px] max-w-[1440px] mx-auto bg-bg-page font-body shadow-sm">
@@ -182,6 +185,19 @@ export default function TalkToCounselor() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         counselor={selectedCounselor}
+        onBookingSuccess={(counselorName, dateLabel, timeSlot) => {
+          setSuccessDetails({
+            title: "Session booked Successfully",
+            description: `Your session with ${counselorName} has been booked for ${dateLabel} at ${timeSlot}.`
+          });
+          setIsSuccessOpen(true);
+        }}
+      />
+      <SuccessPopup 
+        isOpen={isSuccessOpen}
+        onClose={() => setIsSuccessOpen(false)}
+        title={successDetails.title}
+        description={successDetails.description}
       />
     </div>
   );

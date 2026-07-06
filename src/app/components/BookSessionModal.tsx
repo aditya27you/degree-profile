@@ -29,6 +29,7 @@ interface BookSessionModalProps {
   isOpen: boolean;
   onClose: () => void;
   counselor: Counselor | null;
+  onBookingSuccess: (counselorName: string, dateLabel: string, timeSlot: string) => void;
 }
 
 const DATE_TABS: DateTab[] = [
@@ -61,7 +62,7 @@ const TIME_SLOTS: string[] = [
   "7:00 PM - 7:30 PM"
 ];
 
-export default function BookSessionModal({ isOpen, onClose, counselor }: BookSessionModalProps) {
+export default function BookSessionModal({ isOpen, onClose, counselor, onBookingSuccess }: BookSessionModalProps) {
   const [selectedDateId, setSelectedDateId] = useState("today");
   const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
 
@@ -218,7 +219,8 @@ export default function BookSessionModal({ isOpen, onClose, counselor }: BookSes
               <div className="flex justify-end mt-4">
                 <button 
                   onClick={() => {
-                    alert(`Booking successful with ${counselor.name} on ${DATE_TABS.find(t => t.id === selectedDateId)?.label} at ${selectedSlot}!`);
+                    const dateLabel = DATE_TABS.find(t => t.id === selectedDateId)?.label || "Today";
+                    onBookingSuccess(counselor.name, dateLabel, selectedSlot);
                     onClose();
                   }}
                   className="bg-primary hover:bg-primary-dark text-white font-bold py-2.5 px-8 rounded-lg shadow-md hover:shadow-lg transition-all text-sm"
