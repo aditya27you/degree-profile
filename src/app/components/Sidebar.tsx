@@ -21,6 +21,7 @@ export default function Sidebar() {
   const isCounselorActive = pathname === "/talk-to-counselor" || pathname === "/session-booked";
   const isShortlistsActive = pathname === "/shortlists";
   const isReferEarnActive = pathname === "/refer-earn";
+  const isDocumentsActive = pathname === "/my-documents";
 
   return (
     <aside className="hidden lg:flex flex-col w-[220px] bg-white border border-border rounded-xl p-4 h-fit shadow-premium flex-shrink-0">
@@ -93,13 +94,22 @@ export default function Sidebar() {
           <span>Talk to counselor</span>
         </Link>
 
-        {/* My Documents link (static) */}
-        <div className="flex items-center gap-3 py-3 px-4 rounded-lg text-text-body font-medium text-[15px] cursor-pointer transition-all hover:bg-slate-50 hover:text-text-dark group">
-          <div className="flex items-center justify-center text-lg text-text-light group-hover:text-text-dark transition-colors">
+        {/* My Documents link */}
+        <Link 
+          href="/my-documents" 
+          className={`flex items-center gap-3 py-3 px-4 rounded-lg font-medium text-[15px] cursor-pointer transition-all ${
+            isDocumentsActive 
+              ? "text-primary bg-primary-light" 
+              : "text-text-body hover:bg-slate-50 hover:text-text-dark group"
+          }`}
+        >
+          <div className={`flex items-center justify-center text-lg ${
+            isDocumentsActive ? "text-primary" : "text-text-light group-hover:text-text-dark transition-colors"
+          }`}>
             <DocumentsIcon />
           </div>
           <span>My documents</span>
-        </div>
+        </Link>
 
         {/* Refer & Earn link */}
         <Link 
