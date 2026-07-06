@@ -26,20 +26,18 @@ export default function Sidebar() {
   const isDocumentsActive = pathname === "/my-documents";
 
   return (
-    <aside className="hidden lg:flex flex-col w-[220px] bg-white border border-border rounded-xl p-4 h-fit shadow-premium flex-shrink-0">
-      <nav className="flex flex-col gap-2">
+    <aside className="hidden lg:flex flex-col w-[211px] h-[552px] justify-between items-start bg-white border border-[#CFD8DE] rounded-[8px] py-4 px-0 shadow-premium flex-shrink-0">
+      <nav className="flex flex-col gap-1 w-full">
         {/* Profile Details link */}
         <Link 
           href="/" 
-          className={`flex items-center gap-3 py-3 px-4 rounded-lg font-medium text-[15px] cursor-pointer transition-all ${
+          className={`flex items-center gap-3 py-2.5 px-4 mx-4 rounded-lg font-medium text-[14px] cursor-pointer transition-all ${
             isProfileActive 
               ? "text-primary bg-primary-light" 
               : "text-text-body hover:bg-slate-50 hover:text-text-dark group"
           }`}
         >
-          <div className={`flex items-center justify-center text-lg ${
-            isProfileActive ? "text-primary" : "text-text-light group-hover:text-text-dark transition-colors"
-          }`}>
+          <div className="flex items-center justify-center">
             <ProfileDetailsIcon />
           </div>
           <span>Profile details</span>
@@ -48,15 +46,13 @@ export default function Sidebar() {
         {/* Recommendations link */}
         <Link 
           href="/recommendations" 
-          className={`flex items-center gap-3 py-3 px-4 rounded-lg font-medium text-[15px] cursor-pointer transition-all ${
+          className={`flex items-center gap-3 py-2.5 px-4 mx-4 rounded-lg font-medium text-[14px] cursor-pointer transition-all ${
             isRecommendationsActive 
               ? "text-primary bg-primary-light" 
               : "text-text-body hover:bg-slate-50 hover:text-text-dark group"
           }`}
         >
-          <div className={`flex items-center justify-center text-lg ${
-            isRecommendationsActive ? "text-primary" : "text-text-light group-hover:text-text-dark transition-colors"
-          }`}>
+          <div className="flex items-center justify-center">
             <RecommendationsIcon />
           </div>
           <span>Recommendations</span>
@@ -65,15 +61,13 @@ export default function Sidebar() {
         {/* Shortlists link */}
         <Link 
           href="/shortlists" 
-          className={`flex items-center gap-3 py-3 px-4 rounded-lg font-medium text-[15px] cursor-pointer transition-all ${
+          className={`flex items-center gap-3 py-2.5 px-4 mx-4 rounded-lg font-medium text-[14px] cursor-pointer transition-all ${
             isShortlistsActive 
               ? "text-primary bg-primary-light" 
               : "text-text-body hover:bg-slate-50 hover:text-text-dark group"
           }`}
         >
-          <div className={`flex items-center justify-center text-lg ${
-            isShortlistsActive ? "text-primary" : "text-text-light group-hover:text-text-dark transition-colors"
-          }`}>
+          <div className="flex items-center justify-center">
             <ShortlistsIcon />
           </div>
           <span>Shortlists</span>
@@ -82,15 +76,13 @@ export default function Sidebar() {
         {/* Talk to Counselor link */}
         <Link 
           href="/talk-to-counselor" 
-          className={`flex items-center gap-3 py-3 px-4 rounded-lg font-medium text-[15px] cursor-pointer transition-all ${
+          className={`flex items-center gap-3 py-2.5 px-4 mx-4 rounded-lg font-medium text-[14px] cursor-pointer transition-all ${
             isCounselorActive 
               ? "text-primary bg-primary-light" 
               : "text-text-body hover:bg-slate-50 hover:text-text-dark group"
           }`}
         >
-          <div className={`flex items-center justify-center text-lg ${
-            isCounselorActive ? "text-primary" : "text-text-light group-hover:text-text-dark transition-colors"
-          }`}>
+          <div className="flex items-center justify-center">
             <CounselorIcon />
           </div>
           <span>Talk to counselor</span>
@@ -99,15 +91,13 @@ export default function Sidebar() {
         {/* My Documents link */}
         <Link 
           href="/my-documents" 
-          className={`flex items-center gap-3 py-3 px-4 rounded-lg font-medium text-[15px] cursor-pointer transition-all ${
+          className={`flex items-center gap-3 py-2.5 px-4 mx-4 rounded-lg font-medium text-[14px] cursor-pointer transition-all ${
             isDocumentsActive 
               ? "text-primary bg-primary-light" 
               : "text-text-body hover:bg-slate-50 hover:text-text-dark group"
           }`}
         >
-          <div className={`flex items-center justify-center text-lg ${
-            isDocumentsActive ? "text-primary" : "text-text-light group-hover:text-text-dark transition-colors"
-          }`}>
+          <div className="flex items-center justify-center">
             <DocumentsIcon />
           </div>
           <span>My documents</span>
@@ -116,29 +106,31 @@ export default function Sidebar() {
         {/* Refer & Earn link */}
         <Link 
           href="/refer-earn" 
-          className={`flex items-center gap-3 py-3 px-4 rounded-lg font-medium text-[15px] cursor-pointer transition-all ${
+          className={`flex items-center gap-3 py-2.5 px-4 mx-4 rounded-lg font-medium text-[14px] cursor-pointer transition-all ${
             isReferEarnActive 
               ? "text-primary bg-primary-light" 
               : "text-text-body hover:bg-slate-50 hover:text-text-dark group"
           }`}
         >
-          <div className={`flex items-center justify-center text-lg ${
-            isReferEarnActive ? "text-primary" : "text-text-light group-hover:text-text-dark transition-colors"
-          }`}>
+          <div className="flex items-center justify-center">
             <ReferEarnIcon />
           </div>
           <span>Refer & Earn</span>
         </Link>
       </nav>
-      <div className="h-px bg-border my-5" />
-      <div 
-        onClick={() => setIsLogoutOpen(true)}
-        className="flex items-center gap-3 py-3 px-4 rounded-lg text-red-500 font-medium text-[15px] cursor-pointer transition-all hover:bg-red-50"
-      >
-        <div className="flex items-center justify-center text-lg text-red-500">
-          <LogoutIcon />
+
+      {/* Logout Action wrapper at bottom */}
+      <div className="w-full flex flex-col">
+        <div className="h-px bg-slate-100 mx-4 mb-3" />
+        <div 
+          onClick={() => setIsLogoutOpen(true)}
+          className="flex items-center gap-3 py-2.5 px-4 mx-4 rounded-lg text-red-500 font-bold text-[14px] cursor-pointer transition-all hover:bg-red-50"
+        >
+          <div className="flex items-center justify-center text-lg text-red-500">
+            <LogoutIcon />
+          </div>
+          <span>Log out</span>
         </div>
-        <span>Log out</span>
       </div>
 
       <LogoutModal 
