@@ -41,7 +41,7 @@ const BrandLogo = () => (
       width={140} 
       height={35} 
       priority
-      style={{ objectFit: "contain", height: "auto" }}
+      style={{ objectFit: "contain", width: "140px", height: "auto" }}
     />
   </div>
 );
