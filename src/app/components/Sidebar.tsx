@@ -20,6 +20,7 @@ export default function Sidebar() {
   const isRecommendationsActive = pathname === "/recommendations";
   const isCounselorActive = pathname === "/talk-to-counselor" || pathname === "/session-booked";
   const isShortlistsActive = pathname === "/shortlists";
+  const isReferEarnActive = pathname === "/refer-earn";
 
   return (
     <aside className="hidden lg:flex flex-col w-[220px] bg-white border border-border rounded-xl p-4 h-fit shadow-premium flex-shrink-0">
@@ -100,13 +101,22 @@ export default function Sidebar() {
           <span>My documents</span>
         </div>
 
-        {/* Refer & Earn link (static) */}
-        <div className="flex items-center gap-3 py-3 px-4 rounded-lg text-text-body font-medium text-[15px] cursor-pointer transition-all hover:bg-slate-50 hover:text-text-dark group">
-          <div className="flex items-center justify-center text-lg text-text-light group-hover:text-text-dark transition-colors">
+        {/* Refer & Earn link */}
+        <Link 
+          href="/refer-earn" 
+          className={`flex items-center gap-3 py-3 px-4 rounded-lg font-medium text-[15px] cursor-pointer transition-all ${
+            isReferEarnActive 
+              ? "text-primary bg-primary-light" 
+              : "text-text-body hover:bg-slate-50 hover:text-text-dark group"
+          }`}
+        >
+          <div className={`flex items-center justify-center text-lg ${
+            isReferEarnActive ? "text-primary" : "text-text-light group-hover:text-text-dark transition-colors"
+          }`}>
             <ReferEarnIcon />
           </div>
           <span>Refer & Earn</span>
-        </div>
+        </Link>
       </nav>
       <div className="h-px bg-border my-5" />
       <div className="flex items-center gap-3 py-3 px-4 rounded-lg text-red-500 font-medium text-[15px] cursor-pointer transition-all hover:bg-red-50">
