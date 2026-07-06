@@ -68,16 +68,16 @@ export default function ReferEarn() {
               Your Referral Link
             </span>
 
-            {/* Link & share buttons row */}
-            <div className="flex flex-col md:flex-row gap-3 w-full items-stretch md:items-center">
+            {/* Link & share buttons block */}
+            <div className="flex flex-col gap-4 w-full">
               
               {/* Copyable Input Row */}
-              <div className="flex-1 relative flex items-center">
+              <div className="relative flex items-center w-full">
                 <input 
                   type="text" 
                   readOnly 
                   value={referralLink} 
-                  className="w-full border border-slate-200 rounded-lg py-2 px-3.5 pr-12 text-xs sm:text-sm text-text-dark font-medium bg-[#fcfdfe] focus:outline-none"
+                  className="w-full border border-slate-200 rounded-lg py-2.5 px-3.5 pr-12 text-xs sm:text-sm text-text-dark font-medium bg-[#fcfdfe] focus:outline-none"
                 />
                 <button 
                   onClick={handleCopy}
@@ -95,25 +95,28 @@ export default function ReferEarn() {
                 </button>
               </div>
 
-              {/* Whatsapp Share button */}
-              <a 
-                href={`https://api.whatsapp.com/send?text=${encodeURIComponent("Join Degreefyd using my link: " + referralLink)}`}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-center gap-2 border border-[#007B2D] rounded-[8px] py-2 px-5 text-xs sm:text-sm font-bold text-[#007B2D] bg-white hover:bg-green-50/30 transition-colors cursor-pointer"
-              >
-                <img src="/whatsapp_icon.png" alt="WhatsApp" className="w-4 h-4 object-contain inline" />
-                <span>WhatsApp</span>
-              </a>
+              {/* Share Buttons: 2 columns on mobile, flex row on desktop */}
+              <div className="grid grid-cols-2 md:flex gap-3 w-full">
+                {/* Whatsapp Share button */}
+                <a 
+                  href={`https://api.whatsapp.com/send?text=${encodeURIComponent("Join Degreefyd using my link: " + referralLink)}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-2 border border-[#007B2D] rounded-[8px] py-2.5 px-4 text-xs sm:text-sm font-bold text-[#007B2D] bg-white hover:bg-green-50/30 transition-colors cursor-pointer w-full md:w-auto"
+                >
+                  <img src="/whatsapp_icon.png" alt="WhatsApp" className="w-4 h-4 object-contain inline" />
+                  <span>WhatsApp</span>
+                </a>
 
-              {/* Email Share button */}
-              <a 
-                href={`mailto:?subject=Join%20Degreefyd&body=${encodeURIComponent("Hey, join Degreefyd and discover the best online colleges! Here is my link: " + referralLink)}`}
-                className="flex items-center justify-center gap-2 border border-primary rounded-lg py-2 px-5 text-xs sm:text-sm font-semibold text-primary bg-white hover:bg-slate-50 transition-colors cursor-pointer"
-              >
-                <MailIconLocal />
-                <span>Email</span>
-              </a>
+                {/* Email Share button */}
+                <a 
+                  href={`mailto:?subject=Join%20Degreefyd&body=${encodeURIComponent("Hey, join Degreefyd and discover the best online colleges! Here is my link: " + referralLink)}`}
+                  className="flex items-center justify-center gap-2 border border-primary rounded-lg py-2.5 px-4 text-xs sm:text-sm font-semibold text-primary bg-white hover:bg-slate-50 transition-colors cursor-pointer w-full md:w-auto"
+                >
+                  <MailIconLocal />
+                  <span>Email</span>
+                </a>
+              </div>
 
             </div>
           </div>
