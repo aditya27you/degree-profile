@@ -107,7 +107,7 @@ export const ProfileDetailsIcon = () => (
 );
 
 export const RecommendationsIcon = () => (
-  <img src="/sidebar_recommendations.png" alt="Recommendations" width="24" height="24" className="w-6 h-6 object-contain inline" />
+  <img src="/sidebar_recommendations.png" alt="Recommendations" width="26" height="26" className="w-[26px] h-[26px] object-contain inline" />
 );
 
 export const ShortlistsIcon = () => (
