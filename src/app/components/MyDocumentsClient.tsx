@@ -25,7 +25,7 @@ interface DocItem {
 export default function MyDocumentsClient() {
   const [documents, setDocuments] = useState<DocItem[]>([
     { id: "doc-1", name: "Class 10 Marksheet", state: "validated", fileUrl: "/doc_preview.jpg" },
-    { id: "doc-2", name: "Class 12 Marksheet", state: "pending", fileUrl: "/doc_preview.jpg" },
+    { id: "doc-2", name: "Class 12 Marksheet", state: "pending", fileUrl: "/doc_preview.png" },
     { id: "doc-3", name: "Aadhar Card", state: "empty" },
     { id: "doc-4", name: "PAN Card", state: "empty" },
     { id: "doc-5", name: "CV", state: "empty" },
@@ -44,7 +44,7 @@ export default function MyDocumentsClient() {
       setDocuments((prev) =>
         prev.map((doc) =>
           doc.id === id 
-            ? { ...doc, state: "pending", fileUrl: "/doc_preview.jpg" } 
+            ? { ...doc, state: "pending", fileUrl: "/doc_preview.png" } 
             : doc
         )
       );
