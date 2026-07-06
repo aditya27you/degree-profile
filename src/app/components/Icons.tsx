@@ -103,27 +103,27 @@ export const EditIcon = () => (
 );
 
 export const ProfileDetailsIcon = () => (
-  <img src="/sidebar_profile.png" alt="Profile Details" className="w-[18px] h-[18px] object-contain inline" />
+  <img src="/sidebar_profile.png" alt="Profile Details" className="w-6 h-6 object-contain inline" />
 );
 
 export const RecommendationsIcon = () => (
-  <img src="/sidebar_recommendations.png" alt="Recommendations" className="w-[18px] h-[18px] object-contain inline" />
+  <img src="/sidebar_recommendations.png" alt="Recommendations" className="w-6 h-6 object-contain inline" />
 );
 
 export const ShortlistsIcon = () => (
-  <img src="/sidebar_shortlists.png" alt="Shortlists" className="w-[18px] h-[18px] object-contain inline" />
+  <img src="/sidebar_shortlists.png" alt="Shortlists" className="w-6 h-6 object-contain inline" />
 );
 
 export const CounselorIcon = () => (
-  <img src="/sidebar_counselor.png" alt="Counselor" className="w-[18px] h-[18px] object-contain inline" />
+  <img src="/sidebar_counselor.png" alt="Counselor" className="w-6 h-6 object-contain inline" />
 );
 
 export const DocumentsIcon = () => (
-  <img src="/sidebar_documents.png" alt="Documents" className="w-[18px] h-[18px] object-contain inline" />
+  <img src="/sidebar_documents.png" alt="Documents" className="w-6 h-6 object-contain inline" />
 );
 
 export const ReferEarnIcon = () => (
-  <img src="/sidebar_refer.png" alt="Refer & Earn" className="w-[18px] h-[18px] object-contain inline" />
+  <img src="/sidebar_refer.png" alt="Refer & Earn" className="w-6 h-6 object-contain inline" />
 );
 
 export const LogoutIcon = () => (
