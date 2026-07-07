@@ -1,10 +1,9 @@
-import { Metadata } from "next";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import ReferEarnClient from "../components/ReferEarnClient";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Refer & Earn Program | DegreeFYD Rewards",
   description: "Share your unique DegreeFYD referral link with friends and classmates. Earn premium rewards, cashback, and educational counseling bonuses when they sign up.",
   alternates: {

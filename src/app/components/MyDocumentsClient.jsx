@@ -15,15 +15,9 @@ const EditIconLocal = () => (
   <img src="/edit_icon.png" alt="Change" className="w-3.5 h-3.5 object-contain inline mr-1" />
 );
 
-interface DocItem {
-  id: string;
-  name: string;
-  state: "validated" | "pending" | "empty" | "uploading";
-  fileUrl?: string;
-}
 
 export default function MyDocumentsClient() {
-  const [documents, setDocuments] = useState<DocItem[]>([
+  const [documents, setDocuments] = useState([
     { id: "doc-1", name: "Class 10 Marksheet", state: "validated", fileUrl: "/doc_preview.jpg" },
     { id: "doc-2", name: "Class 12 Marksheet", state: "pending", fileUrl: "/doc_preview.png" },
     { id: "doc-3", name: "Aadhar Card", state: "empty" },
@@ -31,7 +25,7 @@ export default function MyDocumentsClient() {
     { id: "doc-5", name: "CV", state: "empty" },
   ]);
 
-  const handleSimulatedUpload = (id: string) => {
+  const handleSimulatedUpload = (id) => {
     // Transition to uploading first
     setDocuments((prev) =>
       prev.map((doc) =>

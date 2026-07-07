@@ -1,10 +1,9 @@
-import { Metadata } from "next";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import CounselorDashboardClient from "../components/CounselorDashboardClient";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Book Free Counseling Session | DegreeFYD",
   description: "Schedule a live video counseling session with our expert career advisors. Find the best online programs, compare tuition budgets, and verify university degrees.",
   alternates: {

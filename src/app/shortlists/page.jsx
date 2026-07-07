@@ -1,11 +1,10 @@
 import Image from "next/image";
-import { Metadata } from "next";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import { PinIcon } from "../components/Icons";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Shortlisted Colleges | DegreeFYD",
   description: "Review and manage your saved and shortlisted online university applications, status updates, and progress logs on DegreeFYD.",
   alternates: {
@@ -87,16 +86,8 @@ const ShardaLogo = () => (
   </div>
 );
 
-interface College {
-  id: string;
-  name: string;
-  nirfRank: string;
-  location: string;
-  logoComponent: React.ComponentType;
-  coursesShortlisted: number;
-}
 
-const SHORTLISTED_DATA: College[] = [
+const SHORTLISTED_DATA = [
   {
     id: "shortlist-1",
     name: "Alagappa University",

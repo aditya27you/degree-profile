@@ -3,30 +3,15 @@
 import { useEffect, useState } from "react";
 
 // Mock data for State and City options
-const STATE_CITIES_MAP: Record<string, string[]> = {
+const STATE_CITIES_MAP = {
   Haryana: ["Jind", "Gurugram", "Faridabad", "Rohtak", "Hisar"],
   Punjab: ["Ludhiana", "Amritsar", "Jalandhar", "Patiala", "Bathinda"],
   Delhi: ["New Delhi", "Dwarka", "Rohini", "Saket", "Vasant Kunj"],
 };
 
-interface ProfileData {
-  id: string;
-  fullName: string;
-  parentPhone: string;
-  secondaryEmail: string;
-  currentState: string;
-  currentCity: string;
-  whatsapp: string;
-}
 
-interface PopupProps {
-  isOpen: boolean;
-  onClose: () => void;
-  profile: ProfileData;
-  onSubmit: (updatedProfile: Partial<ProfileData>) => void;
-}
 
-export default function Popup({ isOpen, onClose, profile, onSubmit }: PopupProps) {
+export default function Popup({ isOpen, onClose, profile, onSubmit }) {
   const [form, setForm] = useState({
     fullName: "",
     parentPhone: "",
@@ -55,7 +40,7 @@ export default function Popup({ isOpen, onClose, profile, onSubmit }: PopupProps
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit({
       fullName: form.fullName,

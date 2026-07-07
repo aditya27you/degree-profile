@@ -10,29 +10,10 @@ const WhatsappIcon = () => (
   </svg>
 );
 
-interface Counselor {
-  id: string;
-  name: string;
-  languages: string;
-  experienceText: string;
-  ratingText: string;
-  imageUrl: string;
-}
 
-interface DateTab {
-  id: string;
-  label: string;
-  slotsText: string;
-}
 
-interface BookSessionModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  counselor: Counselor | null;
-  onBookingSuccess: (counselorName: string, dateLabel: string, timeSlot: string) => void;
-}
 
-const DATE_TABS: DateTab[] = [
+const DATE_TABS = [
   { id: "today", label: "Today", slotsText: "3 Slots Available" },
   { id: "tomorrow", label: "Tomorrow", slotsText: "19 Slots Available" },
   { id: "mar-28", label: "28 March", slotsText: "19 Slots Available" },
@@ -40,7 +21,7 @@ const DATE_TABS: DateTab[] = [
   { id: "mar-30", label: "30 March", slotsText: "19 Slots Available" },
 ];
 
-const TIME_SLOTS: string[] = [
+const TIME_SLOTS = [
   "9:30 AM - 10:00 AM",
   "10:00 AM - 10:30 AM",
   "10:30 AM - 11:00 AM",
@@ -62,9 +43,9 @@ const TIME_SLOTS: string[] = [
   "7:00 PM - 7:30 PM"
 ];
 
-export default function BookSessionModal({ isOpen, onClose, counselor, onBookingSuccess }: BookSessionModalProps) {
+export default function BookSessionModal({ isOpen, onClose, counselor, onBookingSuccess }) {
   const [selectedDateId, setSelectedDateId] = useState("today");
-  const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
+  const [selectedSlot, setSelectedSlot] = useState(null);
 
   if (!isOpen || !counselor) return null;
 

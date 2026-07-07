@@ -1,6 +1,5 @@
-import { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default function sitemap() {
   const baseUrl = "https://degreefyd.com";
 
   return [

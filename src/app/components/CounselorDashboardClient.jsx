@@ -6,16 +6,8 @@ import BookSessionModal from "./BookSessionModal";
 import SuccessPopup from "./SuccessPopup";
 import { StarIcon, VerifiedIcon, CalendarIcon } from "./Icons";
 
-interface Counselor {
-  id: string;
-  name: string;
-  languages: string;
-  experienceText: string;
-  ratingText: string;
-  imageUrl: string;
-}
 
-const COUNSELORS_DATA: Counselor[] = [
+const COUNSELORS_DATA = [
   { 
     id: "c-1", 
     name: "Harsh Pandey", 
@@ -101,12 +93,12 @@ const COUNSELORS_DATA: Counselor[] = [
 export default function CounselorDashboardClient() {
   const router = useRouter();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedCounselor, setSelectedCounselor] = useState<Counselor | null>(null);
+  const [selectedCounselor, setSelectedCounselor] = useState(null);
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
   const [successDetails, setSuccessDetails] = useState({ title: "", description: "" });
   const [activeDot, setActiveDot] = useState(0);
 
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+  const handleScroll = (e) => {
     const scrollLeft = e.currentTarget.scrollLeft;
     const cardWidth = 280; // card w-[260px] + gap [20px]
     const index = Math.round(scrollLeft / cardWidth);

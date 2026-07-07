@@ -1,10 +1,9 @@
-import { Metadata } from "next";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import DashboardClient from "./components/DashboardClient";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "User Profile Details | DegreeFYD Dashboard",
   description: "View and edit your personal educational preferences, secondary email, current city, state location, and parent details on DegreeFYD.",
   alternates: {

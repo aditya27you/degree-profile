@@ -2,13 +2,8 @@
 
 import React from "react";
 
-interface LogoutModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onConfirm: () => void;
-}
 
-export default function LogoutModal({ isOpen, onClose, onConfirm }: LogoutModalProps) {
+export default function LogoutModal({ isOpen, onClose, onConfirm }) {
   if (!isOpen) return null;
 
   return (

@@ -2,19 +2,10 @@
 
 import React, { useEffect } from "react";
 
-interface SuccessPopupProps {
-  isOpen: boolean;
-  onClose: () => void;
-  title?: string;
-  description?: string;
-}
-
-export default function SuccessPopup({ 
-  isOpen, 
+export default function SuccessPopup({isOpen, 
   onClose, 
   title = "Session booked Successfully", 
-  description = "Your session has been confirmed. A counselor will connect with you shortly." 
-}: SuccessPopupProps) {
+  description = "Your session has been confirmed. A counselor will connect with you shortly."}) {
   
   // Auto-close after 3 seconds
   useEffect(() => {

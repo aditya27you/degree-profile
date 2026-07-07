@@ -46,11 +46,8 @@ const BrandLogo = () => (
   </div>
 );
 
-interface HeaderProps {
-  profileName?: string;
-}
 
-export default function Header({ profileName = "Kartikay Sharma" }: HeaderProps) {
+export default function Header({ profileName = "Kartikay Sharma" }) {
   const pathname = usePathname();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isLogoutOpen, setIsLogoutOpen] = useState(false);
