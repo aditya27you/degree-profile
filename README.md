@@ -1,12 +1,13 @@
 # DegreeFYD Landing Dashboard
 
-A modern, highly responsive,**Next.js 16** (Turbopack compiler), **React 19**, and **Tailwind CSS v3**.
+A modern, highly responsive user profile and college counseling dashboard built using **Next.js 16** (Turbopack compiler), **React 19**, **Tailwind CSS v3**, and written entirely in clean **ES6 JavaScript**.
 
 ## 🚀 Key Features
 
 ### 1. Dashboard & Profile Details (`/`)
-*   **User Profiles**: Features a header with the logo, double-decker search layout, and profile badge (`Kartikay`).
-*   **Completeness Tracker**: Interactive profile details box with a circular progress gauge (65% complete).
+*   **User Profiles**: Features a header with the logo, search bar, and profile badge.
+*   **Profile Image Hover Effect**: Interactive avatar section with a smooth camera overlay showing "Change photo" on mouse hover.
+*   **Completeness Tracker**: Profile details box with a circular progress gauge (65% complete).
 
 ### 2. College Recommendations (`/recommendations`)
 *   **Grid Search**: Dynamic, responsive grid showing recommended colleges.
@@ -18,28 +19,29 @@ A modern, highly responsive,**Next.js 16** (Turbopack compiler), **React 19**, a
 *   **Application Continuity**: Outlines active courses shortlisted with a solid dark navy `"Continue application"` shortcut.
 
 ### 4. Talk to Counselor (`/talk-to-counselor`)
-*   **Counselor Selection**: Responsive grid of active counselor profiles (Hindi/English speaking, ratings, experience stats).
-*   **Interactive Booking Modal**: Allows slot picking via date tabs (Today, Tomorrow, and upcoming dates) and time selectors (9:30 AM to 7:30 PM).
-*   **Success Notification Popup**: Auto-closes after 3 seconds with a visual green checkmark notification, then redirects to confirmation.
+*   **Counselor Selection**: Grid of active counselor profiles (Hindi/English speaking, ratings, experience stats).
+*   **Interactive Booking Modal**: Pick slots via date tabs and time selectors (9:30 AM to 7:30 PM).
+*   **Success Notification Popup**: Auto-closes after 3 seconds with a visual checkmark animation, redirecting to confirmation.
 
 ### 5. Session Booked Confirmation (`/session-booked`)
-*   **Booking Success View**: Structured confirmation screen showcasing counselor details, date, time slot, and action buttons to return to the dashboard.
+*   **Booking Success View**: Structured confirmation screen showcasing counselor details, date, time slot, and action buttons.
 
 ### 6. Upload Documents (`/my-documents`)
 *   **Multi-State Cards**:
-    *   *Uploaded*: Displays a thumbnail preview of the document (`doc_preview.jpg`) and a validation status (either `"Change"` button or orange `"Validating doc..."` pill).
+    *   *Uploaded*: Displays a sharp preview of the document (`doc_preview.png`) and validation status (either `"Change"` button or orange `"Validation in process..."` pill).
     *   *Empty*: Dashed upload box with outline icons and a `"Browse files"` trigger.
-*   **Simulated Upload**: Interactive state loader that displays `"Uploading..."` for 1.5 seconds when clicking browse/change, before setting state to pending validation.
+*   **Simulated Upload**: Interactive state loader displaying `"Uploading..."` for 1.5 seconds when browse/change is triggered.
 *   **2-Column Mobile Grid**: Stacks cards side-by-side in a responsive double column on mobile screens.
 
 ### 7. Refer & Earn (`/refer-earn`)
 *   **Promotional Banner**: Implements a dedicated vector graphic banner detailing the referral program.
-*   **Interactive Link Copier**: Readonly link box with a nested copy icon button. Copying triggers a visual `"Copied!"` checkmark.
-*   **Social Shares**: WhatsApp and Email sharing integrations, wrapping to a side-by-side equal width layout on mobile viewports.
+*   **Horizontal Layout**: Aligns referral link copier, WhatsApp share button, and Email share button horizontally in a single row on desktop viewports.
+*   **Interactive Link Copier**: Readonly link box with a nested copy icon button and a vertical separator line.
+*   **Social Shares**: Outlined green WhatsApp and navy Email sharing integrations.
 
-### 8. Log out Confirmation Modal
-*   **Shared Sidebar Trigger**: Easily opened by clicking `"Log out"` from the shared sidebar navigation panel on any page.
-*   **Backdrop Overlay**: Renders a dark blurred backdrop, a header with a Close (X) icon, and cancel/logout buttons.
+### 8. Shared Sidebar Navigation & Layout
+*   **Responsive Sticky Header**: Sticky top navbar using a three-column grid layout for perfect centering of nav items.
+*   **Independent Scroll Sidebar**: Rounded card sidebar (`211px` x `552px`) fixed on the desktop viewport under the header, with a `24px` horizontal gap to the content cards, allowing the main content to scroll independently.
 
 ---
 
@@ -47,8 +49,8 @@ A modern, highly responsive,**Next.js 16** (Turbopack compiler), **React 19**, a
 
 *   **Framework**: Next.js 16.2.10 (Turbopack enabled)
 *   **Library**: React 19.2.4
+*   **Language**: JavaScript (ES6 ESM format)
 *   **Styling**: Tailwind CSS 3.4.19
-*   **Icons**: Consolidates outline SVG structures inside `src/app/components/Icons.tsx` and custom public image icon assets.
 
 ---
 
@@ -59,25 +61,25 @@ degreefyd-landing/
 ├── public/                 # Static media assets (banners, icons, previews)
 ├── src/app/
 │   ├── components/         # Shared Layout & Client Components
-│   │   ├── Header.tsx      # Double-decker top navbar
-│   │   ├── Sidebar.tsx     # Left-side navigation drawer
-│   │   ├── Footer.tsx      # Global copyright bar
-│   │   ├── Icons.tsx       # Consolidated SVG component pool
-│   │   ├── LogoutModal.tsx # Logout confirmation popup
-│   │   ├── DashboardClient.tsx
-│   │   ├── CounselorDashboardClient.tsx
-│   │   ├── ReferEarnClient.tsx
-│   │   └── MyDocumentsClient.tsx
+│   │   ├── Header.jsx      # Sticky top navbar (3-column grid layout)
+│   │   ├── Sidebar.jsx     # Left-side navigation card (fixed positioning)
+│   │   ├── Footer.jsx      # Global copyright bar
+│   │   ├── Icons.jsx       # Consolidated SVG component pool
+│   │   ├── LogoutModal.jsx # Logout confirmation popup
+│   │   ├── DashboardClient.jsx
+│   │   ├── CounselorDashboardClient.jsx
+│   │   ├── ReferEarnClient.jsx
+│   │   └── MyDocumentsClient.jsx
 │   ├── my-documents/       # Documents uploader page (SSR)
 │   ├── recommendations/    # College recommendations page (SSR)
 │   ├── refer-earn/         # Refer and earn sharing page (SSR)
 │   ├── session-booked/     # Session confirmed page (SSR)
 │   ├── shortlists/         # Shortlisted colleges page (SSR)
 │   ├── talk-to-counselor/  # Expert counselor booking page (SSR)
-│   ├── layout.tsx          # HTML template wrapper
-│   ├── page.tsx            # Profile dashboard details page (SSR)
-│   ├── sitemap.ts          # XML Sitemap generator (SEO)
-│   └── robots.ts           # Crawler controller file (SEO)
+│   ├── layout.jsx          # HTML template wrapper
+│   ├── page.jsx            # Profile dashboard details page (SSR)
+│   ├── sitemap.js          # XML Sitemap generator (SEO)
+│   └── robots.js           # Crawler controller file (SEO)
 ```
 
 ---
