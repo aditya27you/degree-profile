@@ -47,7 +47,7 @@ export default function TalkToCounselor() {
       <div className="flex flex-col min-h-screen lg:min-h-[1110px] max-w-[1440px] mx-auto bg-bg-page font-body shadow-sm">
         <Header />
 
-        <main className="flex flex-col lg:flex-row flex-1 py-10 px-4 lg:px-8 xl:px-12 lg:pl-[243px] xl:pl-[259px] gap-8 w-full">
+        <main className="flex flex-col lg:flex-row flex-1 py-10 px-4 lg:px-8 xl:px-12 lg:pl-[267px] xl:pl-[283px] gap-8 w-full">
           <Sidebar />
           <CounselorDashboardClient />
         </main>
