@@ -85,7 +85,7 @@ export default function Header({ profileName = "Kartikay Sharma" }) {
       </div>
 
       {/* Main Navbar */}
-      <header className="hidden lg:flex justify-between items-center py-3.5 px-8 xl:px-12 bg-white sticky top-0 z-50 border-b border-border shadow-[0_2px_10px_rgba(0,0,0,0.01)]">
+      <header className="hidden lg:flex justify-between items-center py-3.5 px-8 xl:px-12 bg-white static border-b border-border shadow-[0_2px_10px_rgba(0,0,0,0.01)]">
         <div className="flex items-center gap-2 font-bold text-2xl text-text-dark font-title">
           <BrandLogo />
         </div>
@@ -120,7 +120,7 @@ export default function Header({ profileName = "Kartikay Sharma" }) {
       </header>
 
       {/* Mobile Navbar */}
-      <div className="flex lg:hidden justify-between items-center p-3.5 bg-white border-b border-border sticky top-0 z-50">
+      <div className="flex lg:hidden justify-between items-center p-3.5 bg-white border-b border-border static">
         <button 
           onClick={() => setIsDrawerOpen(true)}
           className="flex items-center justify-center w-9 h-9 rounded-md border border-border text-text-dark text-lg cursor-pointer"
