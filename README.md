@@ -1,10 +1,6 @@
 # DegreeFYD Landing Dashboard
 
-A modern, highly responsive, and premium educational dashboard platform built using **Next.js 16** (Turbopack compiler), **React 19**, and **Tailwind CSS v3**.
-
-This project provides a comprehensive landing dashboard interface tailored for students seeking online college counseling, recommendations, document verification, and referral features.
-
----
+A modern, highly responsive,**Next.js 16** (Turbopack compiler), **React 19**, and **Tailwind CSS v3**.
 
 ## 🚀 Key Features
 

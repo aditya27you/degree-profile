@@ -162,7 +162,7 @@ export default function ShortlistedColleges() {
       <div className="flex flex-col min-h-screen lg:min-h-[1110px] max-w-[1440px] mx-auto bg-bg-page font-body shadow-sm">
         <Header />
 
-      <main className="flex flex-col lg:flex-row flex-1 py-10 px-4 lg:px-8 xl:px-12 gap-8 w-full">
+      <main className="flex flex-col lg:flex-row flex-1 py-10 px-4 lg:px-8 xl:px-12 lg:pl-[249px] gap-8 w-full">
         <Sidebar />
 
         {/* Right Content Panel - Shortlisted Colleges */}
