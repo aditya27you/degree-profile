@@ -87,33 +87,35 @@ export default function Header({ profileName = "Kartikay Sharma" }) {
 
         <header className="hidden lg:flex w-full h-auto min-h-[68px] px-[100px] items-center justify-between bg-white border-b border-border shadow-[0_2px_10px_rgba(0,0,0,0.01)]">
           <BrandLogo />
-          <nav className="flex justify-center gap-8">
-            <div className="flex items-center gap-1 font-medium text-text-dark text-[15px] cursor-pointer transition-colors hover:text-accent-orange group">
-              <span>Universities</span>
-              <span className="text-text-light transition-transform group-hover:translate-y-0.5"><ChevronDownIcon /></span>
+          <div className="flex items-center gap-10">
+            <nav className="flex justify-center gap-8">
+              <div className="flex items-center gap-1 font-medium text-text-dark text-[15px] cursor-pointer transition-colors hover:text-accent-orange group">
+                <span>Universities</span>
+                <span className="text-text-light transition-transform group-hover:translate-y-0.5"><ChevronDownIcon /></span>
+              </div>
+              <div className="flex items-center gap-1 font-medium text-text-dark text-[15px] cursor-pointer transition-colors hover:text-accent-orange group">
+                <span>Courses</span>
+                <span className="text-text-light transition-transform group-hover:translate-y-0.5"><ChevronDownIcon /></span>
+              </div>
+              <div className="flex items-center gap-1 font-medium text-text-dark text-[15px] cursor-pointer transition-colors hover:text-accent-orange group">
+                <span>More</span>
+                <span className="text-text-light transition-transform group-hover:translate-y-0.5"><ChevronDownIcon /></span>
+              </div>
+              <div className="flex items-center gap-1 font-medium text-text-dark text-[15px] cursor-pointer transition-colors hover:text-accent-orange group">
+                <span>Regular</span>
+                <span className="text-text-light transition-transform group-hover:translate-y-0.5"><ChevronDownIcon /></span>
+              </div>
+            </nav>
+            <div className="flex items-center gap-3">
+              <button className="flex items-center gap-2 border border-[#c3d4e9] py-2 px-4 rounded-lg text-primary font-medium text-sm transition-all hover:bg-primary-light hover:border-primary">
+                <SearchIcon />
+                <span>Search</span>
+              </button>
+              <button className="flex items-center gap-2 bg-[#f3f6f9] border border-border py-2 px-4 rounded-lg text-text-dark font-medium text-sm transition-all hover:bg-[#e2e8f0]">
+                <UserIcon />
+                <span>{firstName}</span>
+              </button>
             </div>
-            <div className="flex items-center gap-1 font-medium text-text-dark text-[15px] cursor-pointer transition-colors hover:text-accent-orange group">
-              <span>Courses</span>
-              <span className="text-text-light transition-transform group-hover:translate-y-0.5"><ChevronDownIcon /></span>
-            </div>
-            <div className="flex items-center gap-1 font-medium text-text-dark text-[15px] cursor-pointer transition-colors hover:text-accent-orange group">
-              <span>More</span>
-              <span className="text-text-light transition-transform group-hover:translate-y-0.5"><ChevronDownIcon /></span>
-            </div>
-            <div className="flex items-center gap-1 font-medium text-text-dark text-[15px] cursor-pointer transition-colors hover:text-accent-orange group">
-              <span>Regular</span>
-              <span className="text-text-light transition-transform group-hover:translate-y-0.5"><ChevronDownIcon /></span>
-            </div>
-          </nav>
-          <div className="flex items-center gap-3">
-            <button className="flex items-center gap-2 border border-[#c3d4e9] py-2 px-4 rounded-lg text-primary font-medium text-sm transition-all hover:bg-primary-light hover:border-primary">
-              <SearchIcon />
-              <span>Search</span>
-            </button>
-            <button className="flex items-center gap-2 bg-[#f3f6f9] border border-border py-2 px-4 rounded-lg text-text-dark font-medium text-sm transition-all hover:bg-[#e2e8f0]">
-              <UserIcon />
-              <span>{firstName}</span>
-            </button>
           </div>
         </header>
 
