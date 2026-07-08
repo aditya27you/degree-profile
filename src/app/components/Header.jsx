@@ -61,9 +61,9 @@ export default function Header({ profileName = "aditya shah" }) {
 
   return (
     <>
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1440px] z-50 bg-white">
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[1440px] z-50 bg-white flex flex-col items-start">
         {/* Top thin bar */}
-        <div className="hidden lg:flex justify-between items-center px-[100px] bg-white border-b border-border text-[13px] text-text-body h-9">
+        <div className="hidden lg:flex w-full justify-between items-center px-[100px] bg-white text-[13px] text-text-body h-9">
           <div className="flex gap-5">
             <div className="flex items-center gap-1.5">
               <span className="text-accent-orange"><PhoneIcon /></span>
@@ -120,7 +120,7 @@ export default function Header({ profileName = "aditya shah" }) {
         </header>
 
         {/* Mobile Navbar */}
-        <div className="flex lg:hidden justify-between items-center p-3.5 bg-white border-b border-border h-14">
+        <div className="flex w-full lg:hidden justify-between items-center p-3.5 bg-white border-b border-border h-14">
           <button 
             onClick={() => setIsDrawerOpen(true)}
             className="flex items-center justify-center w-9 h-9 rounded-md border border-border text-text-dark text-lg cursor-pointer"
