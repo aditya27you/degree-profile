@@ -189,8 +189,7 @@ export default function ShortlistsClient() {
                       />
                     </div>
 
-                    {/* Continue Application Button - 12px gap from Dropdown */}
-                    <button className="w-full mt-3 bg-primary hover:bg-primary-dark text-white font-bold py-2.5 rounded-lg text-xs lg:text-sm transition-colors text-center shadow-sm">
+                    <button className="w-full mt-3 min-h-8 px-3 py-1.5 flex justify-center items-center gap-2 bg-primary hover:bg-primary-dark text-white text-sm font-normal font-['Poppins'] leading-normal rounded-lg transition-colors text-center shadow-sm">
                       Continue application
                     </button>
                   </div>
@@ -207,7 +206,7 @@ export default function ShortlistsClient() {
 
           {/* Explore all colleges button */}
           <div className="flex justify-center pt-6">
-            <button className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-2.5 px-8 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+            <button className="border border-primary/5 bg-primary/5 text-primary hover:bg-primary/15 hover:border-primary/15 font-semibold py-3 px-4 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Explore all colleges
             </button>
           </div>

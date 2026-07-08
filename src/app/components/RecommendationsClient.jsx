@@ -194,7 +194,7 @@ export default function RecommendationsClient() {
 
           {/* Explore all colleges button */}
           <div className="flex justify-center pt-6">
-            <button className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-2.5 px-8 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+            <button className="border border-primary/5 bg-primary/5 text-primary hover:bg-primary/15 hover:border-primary/15 font-semibold py-3 px-4 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Explore all colleges
             </button>
           </div>
