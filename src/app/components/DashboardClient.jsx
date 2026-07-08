@@ -18,7 +18,7 @@ export default function DashboardClient() {
   });
 
   return (
-    <section className="flex-1 flex flex-col gap-6">
+    <section className="flex-1 flex flex-col gap-4">
       <h1 className="block lg:hidden text-2xl font-bold text-text-dark font-title mb-1 mt-2.5">Profile Details</h1>
 
       {/* Profile card with circle progress */}

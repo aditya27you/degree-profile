@@ -90,9 +90,8 @@ export const VerifiedIcon = () => (
 );
 
 export const EditIcon = () => (
-  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-    <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+  <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+    <path d="M11.2917 0.625L13.9583 3.29167M4.29167 12.9583L11.9583 5.29167L9.29167 2.625L1.625 10.2917L0.625 13.9583L4.29167 12.9583Z" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
