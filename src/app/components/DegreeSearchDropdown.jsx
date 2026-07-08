@@ -69,7 +69,7 @@ export default function DegreeSearchDropdown({ value = "", onSelect, placeholder
             setIsOpen(true);
           }}
           onFocus={() => setIsOpen(true)}
-          className="w-full border border-[#CFD8DE] rounded-lg py-2 pl-3 pr-8 bg-white text-[13px] text-text-dark font-medium placeholder-slate-400 outline-none focus:border-primary transition-colors cursor-pointer"
+          className="w-full h-8 border border-[#CFD8DE] rounded-lg py-2 pl-3 pr-8 bg-white text-[13px] text-text-dark font-medium placeholder-slate-400 outline-none focus:border-primary transition-colors cursor-pointer"
         />
         {/* Chevron icon indicator at the right of input */}
         <div className="absolute right-3 pointer-events-none">
