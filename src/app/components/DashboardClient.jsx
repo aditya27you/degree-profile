@@ -21,7 +21,7 @@ export default function DashboardClient() {
       <h1 className="block lg:hidden text-2xl font-bold text-text-dark font-title mb-1 mt-2.5">Profile Details</h1>
 
       {/* Profile card with circle progress */}
-      <div className="bg-white border border-border rounded-xl p-5 lg:p-6 flex items-center justify-between shadow-premium">
+      <div className="flex w-full justify-between items-center py-6 px-4 rounded-[8px] border border-[#CFD8DE] bg-white">
         <div className="flex items-center gap-5">
           <div className="relative w-[72px] h-[72px] lg:w-[84px] lg:h-[84px]">
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-white text-[11px] font-bold py-0.5 px-1.5 rounded-full z-10 shadow-[0_2px_5px_rgba(16,185,129,0.3)]">65%</div>
@@ -58,7 +58,7 @@ export default function DashboardClient() {
       </div>
 
       {/* Card 1: General Details */}
-      <div className="bg-white border border-border rounded-xl p-5 lg:p-7 shadow-premium transition-all hover:border-slate-300 hover:shadow-premiumHover">
+      <div className="w-full py-6 px-4 rounded-[8px] border border-[#CFD8DE] bg-white">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-lg font-bold text-text-dark font-title">General Details</h3>
           <button 
@@ -97,7 +97,7 @@ export default function DashboardClient() {
       </div>
 
       {/* Card 2: Your Preference Detail */}
-      <div className="bg-white border border-border rounded-xl p-5 lg:p-7 shadow-premium transition-all hover:border-slate-300 hover:shadow-premiumHover">
+      <div className="w-full py-6 px-4 rounded-[8px] border border-[#CFD8DE] bg-white">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-lg font-bold text-text-dark font-title">Your Preference Detail</h3>
           <button className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-text-dark bg-transparent transition-all hover:border-primary hover:bg-primary-light hover:text-primary hover:rotate-12">
@@ -141,7 +141,7 @@ export default function DashboardClient() {
       </div>
 
       {/* Card 3: Educational Detail */}
-      <div className="bg-white border border-border rounded-xl p-5 lg:p-7 shadow-premium transition-all hover:border-slate-300 hover:shadow-premiumHover">
+      <div className="w-full py-6 px-4 rounded-[8px] border border-[#CFD8DE] bg-white">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-lg font-bold text-text-dark font-title">Educational Detail</h3>
           <button className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-text-dark bg-transparent transition-all hover:border-primary hover:bg-primary-light hover:text-primary hover:rotate-12">

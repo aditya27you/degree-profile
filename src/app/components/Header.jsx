@@ -63,7 +63,7 @@ export default function Header({ profileName = "aditya shah" }) {
     <>
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[1440px] z-50 bg-white flex flex-col items-stretch">
         {/* Top thin bar */}
-        <div className="hidden lg:flex justify-between items-center px-[100px] bg-white border-b border-border text-[13px] text-text-body h-9">
+        <div className="hidden lg:flex justify-between items-center px-[100px] bg-white text-[13px] text-text-body h-9">
           <div className="flex gap-5">
             <div className="flex items-center gap-1.5">
               <span className="text-accent-orange"><PhoneIcon /></span>
