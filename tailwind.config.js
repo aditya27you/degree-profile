@@ -26,8 +26,8 @@ export default {
         }
       },
       fontFamily: {
-        title: ["var(--font-outfit)", "Outfit", "Inter", "sans-serif"],
-        body: ["var(--font-inter)", "Inter", "Arial", "sans-serif"],
+        title: ["var(--font-poppins)", "Poppins", "sans-serif"],
+        body: ["var(--font-poppins)", "Poppins", "sans-serif"],
       },
       boxShadow: {
         premium: "0 4px 20px rgba(31, 46, 77, 0.04)",
