@@ -34,6 +34,7 @@ export default function DashboardClient() {
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-lg font-bold text-text-dark font-title">General Details</h3>
           <button 
+          
             onClick={() => setIsPopupOpen(true)}
             className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-text-dark bg-transparent transition-all hover:border-primary hover:bg-primary-light hover:text-primary hover:rotate-12"
           >
