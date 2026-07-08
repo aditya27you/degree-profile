@@ -146,7 +146,7 @@ export default function SessionBooked() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="flex flex-col min-h-screen bg-bg-page font-body pt-14 lg:pt-[110px]">
+      <div className="flex flex-col min-h-screen lg:min-h-[1110px] max-w-[1440px] mx-auto w-full bg-bg-page font-body shadow-sm pt-14 lg:pt-[110px]">
         <Header />
 
       <main className="flex flex-col lg:flex-row flex-1 pt-6 pb-6 px-4 lg:px-8 xl:px-12 gap-8 w-full">

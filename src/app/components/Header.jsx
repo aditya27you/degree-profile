@@ -61,9 +61,9 @@ export default function Header({ profileName = "Kartikay Sharma" }) {
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full z-50 bg-white">
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1440px] z-50 bg-white">
         {/* Top thin bar */}
-        <div className="hidden lg:flex justify-between items-center px-8 xl:px-12 bg-white border-b border-border text-[13px] text-text-body h-9">
+        <div className="hidden lg:flex justify-between items-center px-[100px] bg-white border-b border-border text-[13px] text-text-body h-9">
           <div className="flex gap-5">
             <div className="flex items-center gap-1.5">
               <span className="text-accent-orange"><PhoneIcon /></span>
@@ -85,11 +85,8 @@ export default function Header({ profileName = "Kartikay Sharma" }) {
           </div>
         </div>
 
-        {/* Main Navbar */}
-        <header className="hidden lg:grid grid-cols-3 items-center px-8 xl:px-12 bg-white border-b border-border shadow-[0_2px_10px_rgba(0,0,0,0.01)] h-[74px]">
-          <div className="flex items-center justify-start">
-            <BrandLogo />
-          </div>
+        <header className="hidden lg:flex w-full h-auto min-h-[68px] px-[100px] items-center justify-between bg-white border-b border-border shadow-[0_2px_10px_rgba(0,0,0,0.01)]">
+          <BrandLogo />
           <nav className="flex justify-center gap-8">
             <div className="flex items-center gap-1 font-medium text-text-dark text-[15px] cursor-pointer transition-colors hover:text-accent-orange group">
               <span>Universities</span>
@@ -108,7 +105,7 @@ export default function Header({ profileName = "Kartikay Sharma" }) {
               <span className="text-text-light transition-transform group-hover:translate-y-0.5"><ChevronDownIcon /></span>
             </div>
           </nav>
-          <div className="flex items-center justify-end gap-3">
+          <div className="flex items-center gap-3">
             <button className="flex items-center gap-2 border border-[#c3d4e9] py-2 px-4 rounded-lg text-primary font-medium text-sm transition-all hover:bg-primary-light hover:border-primary">
               <SearchIcon />
               <span>Search</span>
