@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import { PinIcon } from "../components/Icons";
+import DegreeSearchDropdown from "../components/DegreeSearchDropdown";
 
 export const metadata = {
   title: "Shortlisted Colleges | DegreeFYD",
@@ -199,10 +200,8 @@ export default function ShortlistedColleges() {
                     </h3>
                   </div>
 
-                  {/* Course Status Box */}
-                  <div className="w-full border border-slate-100 rounded-lg py-1.5 px-3 bg-slate-50 text-[13px] text-text-dark font-medium leading-relaxed">
-                    {college.coursesShortlisted} Course Shortlisted
-                  </div>
+                  {/* Degree Search Dropdown Component */}
+                  <DegreeSearchDropdown />
 
                   {/* Continue Application Button */}
                   <button className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-2.5 rounded-lg text-xs lg:text-sm transition-colors text-center shadow-sm">
