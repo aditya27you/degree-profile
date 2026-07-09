@@ -36,7 +36,7 @@ function ChangeButton({ onClick }) {
   );
 }
 
-function DocumentThumbnail({ preview, label = "Preview" }) {
+function DocumentThumbnail({ preview, documentName }) {
   const [showPreview, setShowPreview] = useState(false);
   const timerRef = useRef(null);
 
@@ -55,13 +55,17 @@ function DocumentThumbnail({ preview, label = "Preview" }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <img src={preview} alt="Document preview" className="w-full h-full object-cover rounded-md border" />
+      <img src={preview} alt={documentName} className="w-full h-full object-cover rounded-md border" />
       <div
         className={`absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300 ${
           showPreview ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
-        <span className="text-white text-base font-semibold text-center px-2">{label}</span>
+        <p className="text-white text-center text-sm font-medium font-['Poppins'] leading-normal">
+          Preview
+          <br />
+          {documentName}
+        </p>
       </div>
     </div>
   );
@@ -128,7 +132,7 @@ export default function MyDocumentsClient() {
                 className="border border-[#CFD8DE] rounded-[8px] p-4 bg-white h-[235px] flex flex-col items-start justify-between gap-4 shadow-sm flex-1"
               >
                 {/* Thumbnail preview */}
-                <DocumentThumbnail preview={doc.fileUrl} label={`Preview ${doc.name}`} />
+                <DocumentThumbnail preview={doc.fileUrl} documentName={doc.name} />
 
                 {/* Status row at bottom */}
                 {doc.state === "validated" ? (
