@@ -98,13 +98,13 @@ export default function MyDocumentsClient() {
   };
 
   return (
-    <section className="flex-1 flex flex-col gap-6 items-start">
+    <section className="flex-1 min-w-0 flex flex-col gap-6 items-start">
       <h1 className="text-xl lg:text-2xl font-bold text-text-dark font-title">
         Upload your documents
       </h1>
 
       {/* Documents Grid / Row */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 w-full xl:w-[1013px]">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 w-full xl:max-w-[1013px]">
         {documents.map((doc) => {
           const isUploaded = doc.state === "validated" || doc.state === "pending";
           const isUploading = doc.state === "uploading";

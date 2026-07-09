@@ -132,7 +132,7 @@ export default function ShortlistsClient() {
         <Sidebar />
 
         {/* Right Content Panel - Shortlisted Colleges */}
-        <section className="flex-1 flex flex-col gap-6">
+        <section className="flex-1 min-w-0 flex flex-col gap-6">
           <div className="flex flex-col">
             <h1 className="text-2xl font-bold text-text-dark font-title mt-2">Shortlisted colleges</h1>
             <p className="text-[13px] text-text-light mt-1">Manage your shortlisted colleges, edit selected programs, or click bookmark to remove them.</p>
@@ -146,7 +146,7 @@ export default function ShortlistsClient() {
                 return (
                   <div 
                     key={college.id} 
-                    className="flex flex-col items-start p-4 bg-[#FFF] border border-[#CFD8DE] rounded-[8px] w-full sm:w-[327px] h-[229px] relative hover:border-slate-400 transition-all shadow-sm"
+                    className="flex flex-col items-start p-4 bg-[#FFF] border border-[#CFD8DE] rounded-[8px] w-full h-[229px] relative hover:border-slate-400 transition-all shadow-sm"
                   >
                     {/* Bookmark/Save Active Icon in Top Right */}
                     <button 

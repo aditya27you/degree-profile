@@ -122,7 +122,7 @@ export default function RecommendationsClient() {
         <Sidebar />
 
         {/* Right Content Panel - Recommended Colleges */}
-        <section className="flex-1 flex flex-col gap-6">
+        <section className="flex-1 min-w-0 flex flex-col gap-6">
           <div className="flex flex-col">
             <h1 className="text-[20px] font-semibold text-[#121212] font-body leading-normal mt-2">Recommended colleges</h1>
             <p className="text-[13px] text-text-light mt-1">Select a course to automatically shortlist and save a college.</p>
@@ -136,7 +136,7 @@ export default function RecommendationsClient() {
                 return (
                   <div 
                     key={college.id} 
-                    className="flex flex-col items-start justify-between p-4 bg-[#FFF] border border-[#CFD8DE] rounded-[8px] w-full sm:w-[327px] h-[187px] relative hover:border-slate-400 transition-all shadow-sm"
+                    className="flex flex-col items-start justify-between p-4 bg-[#FFF] border border-[#CFD8DE] rounded-[8px] w-full h-[187px] relative hover:border-slate-400 transition-all shadow-sm"
                   >
                     {/* Outline bookmark button */}
                     <button 

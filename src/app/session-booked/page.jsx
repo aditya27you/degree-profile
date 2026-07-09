@@ -76,7 +76,7 @@ const SessionCard = ({
   dateText, 
   timeText}) => {
   return (
-    <div className="flex flex-col items-center gap-6 p-4 w-full xl:w-[1013px] border border-[#CFD8DE] bg-white rounded-[8px] shadow-sm">
+    <div className="flex flex-col items-center gap-6 p-4 w-full xl:max-w-[1013px] border border-[#CFD8DE] bg-white rounded-[8px] shadow-sm">
       
       {/* Top Header Row with checkmark */}
       <div className="flex items-center gap-3 w-full justify-start">
@@ -153,7 +153,7 @@ export default function SessionBooked() {
         <Sidebar />
 
         {/* Right Content Panel - Your Session is Booked! */}
-        <section className="flex-1 flex flex-col gap-6 items-start">
+        <section className="flex-1 min-w-0 flex flex-col gap-6 items-start">
           <SessionCard 
             counselorName="Harsh Pandey"
             counselorRole="Career Counsellor"

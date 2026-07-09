@@ -25,13 +25,13 @@ export default function ReferEarnClient() {
   };
 
   return (
-    <section className="flex-1 flex flex-col gap-6 items-start">
+    <section className="flex-1 min-w-0 flex flex-col gap-6 items-start">
       <h1 className="text-xl lg:text-2xl font-bold text-text-dark font-title">
         Refer Degreefyd to others to get benifits
       </h1>
 
       {/* Banner Graphic Illustration */}
-      <div className="w-full xl:w-[1013px] h-fit lg:h-[212px] rounded-[8px] overflow-hidden shadow-sm border border-slate-100 relative bg-[#f1f3fa]">
+      <div className="w-full xl:max-w-[1013px] h-fit lg:h-[212px] rounded-[8px] overflow-hidden shadow-sm border border-slate-100 relative bg-[#f1f3fa]">
         <img 
           src="/refer_banner.png" 
           alt="Refer and Earn Banner - Share your unique link with friends and earn rewards when they join." 
@@ -40,7 +40,7 @@ export default function ReferEarnClient() {
       </div>
 
       {/* Referral Link & Actions card */}
-      <div className="bg-white border border-border rounded-xl p-5 lg:p-6 w-full xl:w-[1013px] shadow-premium flex flex-col gap-4">
+      <div className="bg-white border border-border rounded-xl p-5 lg:p-6 w-full xl:max-w-[1013px] shadow-premium flex flex-col gap-4">
         {/* Top info line */}
         <p className="text-[13px] text-text-light font-medium leading-relaxed">
           Share your unique link with friends and earn rewards when they join.

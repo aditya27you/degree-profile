@@ -136,7 +136,7 @@ export default function CounselorDashboardClient() {
   return (
     <>
       {/* Right Content Panel - Book Free Session */}
-      <section className="flex-1 flex flex-col gap-6 overflow-hidden">
+      <section className="flex-1 min-w-0 flex flex-col gap-6 overflow-hidden">
         <div className="flex flex-col gap-2">
           <h1 className="text-2xl font-bold text-text-dark font-title mt-2">
             Book free session with our experts
@@ -154,7 +154,7 @@ export default function CounselorDashboardClient() {
           {COUNSELORS_DATA.map((counselor) => (
             <div 
               key={counselor.id}
-              className="w-[189.8px] p-3 flex flex-col items-center gap-3 border border-[#CFD8DE] rounded-lg bg-white flex-shrink-0 snap-center"
+              className="w-[189.8px] lg:w-full p-3 flex flex-col items-center gap-3 border border-[#CFD8DE] rounded-lg bg-white flex-shrink-0 lg:flex-shrink snap-center"
             >
               <img src={counselor.imageUrl} alt={counselor.name} className="w-16 h-16 rounded-full object-cover" />
               

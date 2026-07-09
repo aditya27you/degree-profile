@@ -10,7 +10,7 @@ export default function ProfileCard({ name, email, initial, completion, avatarUr
   const strokeDashoffset = circumference - (validCompletion / 100) * circumference;
 
   return (
-    <div className="flex w-[1013px] px-4 py-6 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-gray-300 justify-between items-center">
+    <div className="flex w-full max-w-[1013px] px-4 py-6 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-gray-300 justify-between items-center">
       {/* Left side: Avatar + Info */}
       <div className="flex items-center gap-4">
         {/* Avatar + Progress Ring wrapper */}
