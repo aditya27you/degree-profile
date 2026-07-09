@@ -118,7 +118,7 @@ export default function RecommendationsClient() {
         </div>
       )}
 
-      <main className="flex flex-col lg:flex-row flex-1 pt-6 pb-6 px-4 lg:pl-[311px] lg:pr-[100px] gap-4 w-full">
+      <main className="flex flex-col lg:flex-row flex-1 pt-6 pb-6 px-4 lg:px-[100px] gap-4 w-full">
         <Sidebar />
 
         {/* Right Content Panel - Recommended Colleges */}

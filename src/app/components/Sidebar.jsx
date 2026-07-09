@@ -26,7 +26,7 @@ export default function Sidebar() {
   const isDocumentsActive = pathname === "/my-documents";
 
   return (
-    <aside className="fixed left-0 top-[112px] w-[211px] h-[552px] py-4 flex flex-col justify-between items-start bg-white border-r overflow-y-auto z-40 hidden lg:flex">
+    <aside className="hidden lg:flex flex-col sticky top-[134px] h-[552px] w-[211px] justify-between items-start bg-white border border-[#CFD8DE] rounded-[8px] py-4 px-0 z-40 overflow-y-auto flex-shrink-0">
       <nav className="flex flex-col gap-1.5 w-full">
         {/* Profile Details link */}
         <Link 
