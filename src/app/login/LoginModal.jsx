@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function LoginModal({ onClose, onSignUpClick, onLoginSuccess }) {
   const [phone, setPhone] = useState('');
@@ -80,34 +81,16 @@ export default function LoginModal({ onClose, onSignUpClick, onLoginSuccess }) {
           </svg>
         </button>
 
-        <div className="flex flex-col">
-          <div className="flex items-center justify-center mb-[8px] select-none">
-            <svg className="w-10 h-10 mr-2 flex-shrink-0" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M17 13.5C10 16.5 8 25 12.5 31.5C15 35 20 35.5 23 33C17.5 34 13.5 31 12.5 25.5C11.5 19.5 14 14.5 17 13.5Z"
-                fill="#ED923D"
+        <div className="flex items-center justify-center mb-[8px] select-none">
+           <Image
+              src="/logo.png"
+              alt="DegreeFYD Logo"
+              width={140}
+              height={40}
+              priority
+              style={{ objectFit: "contain", width: "140px", height: "auto" }}
               />
-              <path
-                d="M20 20C17.5 23 15.5 28.5 16 32.5C16.2 34 17.5 34.5 18.5 34.5C21 34.5 22.5 28.5 23.5 24.5C24 22.5 23 20.5 20 20Z"
-                fill="#0D3B59"
-              />
-              <circle cx="20.5" cy="15.5" r="3.5" fill="#0D3B59" />
-              <path d="M20.5 9.5L25 12L20.5 14.5L16 12L20.5 9.5Z" fill="#0D3B59" />
-              <path d="M17.5 12.8V15.5" stroke="#0D3B59" strokeWidth="1" />
-              <path
-                d="M16 32C19.5 31 23.5 25 25.5 18.5C26 16.5 26.5 13.5 26.5 13.5C26.5 13.5 25.2 16.5 23.5 20.5C21.5 25 18.5 29.5 16 32Z"
-                fill="#0D3B59"
-              />
-              <path
-                d="M28 10C28 10.8 28.7 11.5 29.5 11.5C28.7 11.5 28 12.2 28 13C28 12.2 27.3 11.5 26.5 11.5C27.3 11.5 28 10.8 28 10Z"
-                fill="#ED923D"
-              />
-            </svg>
-            <span className="text-[26px] tracking-tight font-sans text-[#0D3B59]">
-              <span className="font-normal">Degree</span>
-              <span className="font-bold">FYD</span>
-            </span>
-          </div>
+        </div>
 
           {!isOtpSent ? (
             <>

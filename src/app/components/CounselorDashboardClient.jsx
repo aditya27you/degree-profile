@@ -230,7 +230,7 @@ export default function CounselorDashboardClient() {
 
           // Navigate to session-booked page after 3 seconds (1s popup + 2s delay)
           navTimerRef.current = setTimeout(() => {
-            router.push("/session-booked");
+            router.push("/dashboard/session-booked");
           }, 3000);
         }}
       />
