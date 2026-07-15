@@ -2,6 +2,15 @@
 
 A modern, highly responsive user profile and college counseling dashboard built using **Next.js 16** (Turbopack compiler), **React 19**, **Tailwind CSS v3**, and written entirely in clean **ES6 JavaScript**.
 
+🔗 **Live Deployment**: [https://degree-profile.vercel.app/](https://degree-profile.vercel.app/)
+
+> ⚠️ **Test Login Credentials**
+> This deployment currently uses a **hardcoded OTP for testing purposes**.
+> **OTP / Password: `1234`**
+> Enter any valid phone number or email, then use `1234` as the OTP on the verification screen to log in.
+
+---
+
 ## 🚀 Key Features
 
 ### 1. Dashboard & Profile Details (`/`)
@@ -39,7 +48,13 @@ A modern, highly responsive user profile and college counseling dashboard built 
 *   **Interactive Link Copier**: Readonly link box with a nested copy icon button and a vertical separator line.
 *   **Social Shares**: Outlined green WhatsApp and navy Email sharing integrations.
 
-### 8. Shared Sidebar Navigation & Layout
+### 8. Login & Authentication
+*   **Dual Auth Methods**: Toggle between Phone (Indian numbers, `+91` prefixed) and Email login.
+*   **Client-Side Validation**: Phone numbers validated against a 10-digit Indian mobile regex (`6-9` starting digit); emails validated against a standard email format regex.
+*   **OTP Verification**: 4-digit OTP input with auto-focus/auto-advance, resend timer (29s countdown), and inline error states.
+*   **Test Mode**: OTP is currently hardcoded to **`1234`** for local/staging testing — see the callout at the top of this README.
+
+### 9. Shared Sidebar Navigation & Layout
 *   **Responsive Sticky Header**: Sticky top navbar using a three-column grid layout for perfect centering of nav items.
 *   **Independent Scroll Sidebar**: Rounded card sidebar (`211px` x `552px`) fixed on the desktop viewport under the header, with a `24px` horizontal gap to the content cards, allowing the main content to scroll independently.
 
@@ -51,6 +66,7 @@ A modern, highly responsive user profile and college counseling dashboard built 
 *   **Library**: React 19.2.4
 *   **Language**: JavaScript (ES6 ESM format)
 *   **Styling**: Tailwind CSS 3.4.19
+*   **Deployment**: Vercel
 
 ---
 
@@ -65,6 +81,7 @@ degreefyd-landing/
 │   │   ├── Sidebar.jsx     # Left-side navigation card (fixed positioning)
 │   │   ├── Footer.jsx      # Global copyright bar
 │   │   ├── Icons.jsx       # Consolidated SVG component pool
+│   │   ├── LoginModal.jsx  # Phone/Email login + OTP verification modal
 │   │   ├── LogoutModal.jsx # Logout confirmation popup
 │   │   ├── DashboardClient.jsx
 │   │   ├── CounselorDashboardClient.jsx
@@ -102,10 +119,21 @@ To run this project locally, ensure you have **Node.js** (v18+) installed.
     ```bash
     npm run dev
     ```
-    The application will launch locally at:
-    👉 ** https://degree-profile.vercel.app/**
+    The application is live at:
+    👉 **[https://degree-profile.vercel.app/](https://degree-profile.vercel.app/)**
 
 4.  **Production Compilation Check**:
     ```bash
     npm run build
     ```
+
+---
+
+## 🔐 Testing the Login Flow
+
+1.  Open the login modal and choose **Phone** or **Email**.
+2.  Enter any valid-format value (e.g. `9876543210` for phone, or `test@example.com` for email).
+3.  On the OTP screen, enter **`1234`** — this is the test OTP wired into `LoginModal.jsx`.
+4.  A successful match triggers `onLoginSuccess()` and logs you in.
+
+> Replace the hardcoded `'1234'` check in `handleVerifyOtp` with a real OTP-send/verify API call before going to production.
